@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE0C67B516D55BE7007D003D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B416D55BE7007D003D /* UIKit.framework */; };
+		FE0C67B716D55BE7007D003D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B616D55BE7007D003D /* Foundation.framework */; };
+		FE0C67B916D55BE7007D003D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B816D55BE7007D003D /* CoreGraphics.framework */; };
+		FE0C67BF16D55BE7007D003D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67BD16D55BE7007D003D /* InfoPlist.strings */; };
+		FE0C67C116D55BE7007D003D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67C016D55BE7007D003D /* main.m */; };
+		FE0C67C516D55BE7007D003D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67C416D55BE7007D003D /* AppDelegate.m */; };
+		FE0C67C716D55BE7007D003D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67C616D55BE7007D003D /* Default.png */; };
+		FE0C67C916D55BE7007D003D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67C816D55BE7007D003D /* Default@2x.png */; };
+		FE0C67CB16D55BE7007D003D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67CA16D55BE7007D003D /* Default-568h@2x.png */; };
+		FE0C67CE16D55BE7007D003D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */; };
+		FE0C67D116D55BE7007D003D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67D016D55BE7007D003D /* ViewController.m */; };
+		FE0C67D916D55BE7007D003D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67D816D55BE7007D003D /* SenTestingKit.framework */; };
+		FE0C67DA16D55BE7007D003D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B416D55BE7007D003D /* UIKit.framework */; };
+		FE0C67DB16D55BE7007D003D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B616D55BE7007D003D /* Foundation.framework */; };
+		FE0C67E316D55BE7007D003D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67E116D55BE7007D003D /* InfoPlist.strings */; };
+		FE0C67E616D55BE7007D003D /* iMomentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67E516D55BE7007D003D /* iMomentsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE0C67DC16D55BE7007D003D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0C67A716D55BE7007D003D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE0C67AF16D55BE7007D003D;
+			remoteInfo = iMoments;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE0C67B016D55BE7007D003D /* iMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0C67B416D55BE7007D003D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE0C67B616D55BE7007D003D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE0C67B816D55BE7007D003D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE0C67BC16D55BE7007D003D /* iMoments-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMoments-Info.plist"; sourceTree = "<group>"; };
+		FE0C67BE16D55BE7007D003D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE0C67C016D55BE7007D003D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE0C67C216D55BE7007D003D /* iMoments-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMoments-Prefix.pch"; sourceTree = "<group>"; };
+		FE0C67C316D55BE7007D003D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE0C67C416D55BE7007D003D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE0C67C616D55BE7007D003D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FE0C67C816D55BE7007D003D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FE0C67CA16D55BE7007D003D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE0C67CD16D55BE7007D003D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE0C67CF16D55BE7007D003D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE0C67D016D55BE7007D003D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE0C67D716D55BE7007D003D /* iMomentsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMomentsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0C67D816D55BE7007D003D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FE0C67E016D55BE7007D003D /* iMomentsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMomentsTests-Info.plist"; sourceTree = "<group>"; };
+		FE0C67E216D55BE7007D003D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE0C67E416D55BE7007D003D /* iMomentsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMomentsTests.h; sourceTree = "<group>"; };
+		FE0C67E516D55BE7007D003D /* iMomentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMomentsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE0C67AD16D55BE7007D003D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67B516D55BE7007D003D /* UIKit.framework in Frameworks */,
+				FE0C67B716D55BE7007D003D /* Foundation.framework in Frameworks */,
+				FE0C67B916D55BE7007D003D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0C67D316D55BE7007D003D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67D916D55BE7007D003D /* SenTestingKit.framework in Frameworks */,
+				FE0C67DA16D55BE7007D003D /* UIKit.framework in Frameworks */,
+				FE0C67DB16D55BE7007D003D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE0C67A516D55BE7007D003D = {
+			isa = PBXGroup;
+			children = (
+				FE0C67BA16D55BE7007D003D /* iMoments */,
+				FE0C67DE16D55BE7007D003D /* iMomentsTests */,
+				FE0C67B316D55BE7007D003D /* Frameworks */,
+				FE0C67B116D55BE7007D003D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE0C67B116D55BE7007D003D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67B016D55BE7007D003D /* iMoments.app */,
+				FE0C67D716D55BE7007D003D /* iMomentsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE0C67B316D55BE7007D003D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67B416D55BE7007D003D /* UIKit.framework */,
+				FE0C67B616D55BE7007D003D /* Foundation.framework */,
+				FE0C67B816D55BE7007D003D /* CoreGraphics.framework */,
+				FE0C67D816D55BE7007D003D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE0C67BA16D55BE7007D003D /* iMoments */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67C316D55BE7007D003D /* AppDelegate.h */,
+				FE0C67C416D55BE7007D003D /* AppDelegate.m */,
+				FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */,
+				FE0C67CF16D55BE7007D003D /* ViewController.h */,
+				FE0C67D016D55BE7007D003D /* ViewController.m */,
+				FE0C67BB16D55BE7007D003D /* Supporting Files */,
+			);
+			path = iMoments;
+			sourceTree = "<group>";
+		};
+		FE0C67BB16D55BE7007D003D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67BC16D55BE7007D003D /* iMoments-Info.plist */,
+				FE0C67BD16D55BE7007D003D /* InfoPlist.strings */,
+				FE0C67C016D55BE7007D003D /* main.m */,
+				FE0C67C216D55BE7007D003D /* iMoments-Prefix.pch */,
+				FE0C67C616D55BE7007D003D /* Default.png */,
+				FE0C67C816D55BE7007D003D /* Default@2x.png */,
+				FE0C67CA16D55BE7007D003D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE0C67DE16D55BE7007D003D /* iMomentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67E416D55BE7007D003D /* iMomentsTests.h */,
+				FE0C67E516D55BE7007D003D /* iMomentsTests.m */,
+				FE0C67DF16D55BE7007D003D /* Supporting Files */,
+			);
+			path = iMomentsTests;
+			sourceTree = "<group>";
+		};
+		FE0C67DF16D55BE7007D003D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C67E016D55BE7007D003D /* iMomentsTests-Info.plist */,
+				FE0C67E116D55BE7007D003D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE0C67AF16D55BE7007D003D /* iMoments */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0C67E916D55BE7007D003D /* Build configuration list for PBXNativeTarget "iMoments" */;
+			buildPhases = (
+				FE0C67AC16D55BE7007D003D /* Sources */,
+				FE0C67AD16D55BE7007D003D /* Frameworks */,
+				FE0C67AE16D55BE7007D003D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMoments;
+			productName = iMoments;
+			productReference = FE0C67B016D55BE7007D003D /* iMoments.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE0C67D616D55BE7007D003D /* iMomentsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE0C67EC16D55BE7007D003D /* Build configuration list for PBXNativeTarget "iMomentsTests" */;
+			buildPhases = (
+				FE0C67D216D55BE7007D003D /* Sources */,
+				FE0C67D316D55BE7007D003D /* Frameworks */,
+				FE0C67D416D55BE7007D003D /* Resources */,
+				FE0C67D516D55BE7007D003D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE0C67DD16D55BE7007D003D /* PBXTargetDependency */,
+			);
+			name = iMomentsTests;
+			productName = iMomentsTests;
+			productReference = FE0C67D716D55BE7007D003D /* iMomentsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE0C67A716D55BE7007D003D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Stas Dymedyuk";
+			};
+			buildConfigurationList = FE0C67AA16D55BE7007D003D /* Build configuration list for PBXProject "iMoments" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FE0C67A516D55BE7007D003D;
+			productRefGroup = FE0C67B116D55BE7007D003D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE0C67AF16D55BE7007D003D /* iMoments */,
+				FE0C67D616D55BE7007D003D /* iMomentsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE0C67AE16D55BE7007D003D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67BF16D55BE7007D003D /* InfoPlist.strings in Resources */,
+				FE0C67C716D55BE7007D003D /* Default.png in Resources */,
+				FE0C67C916D55BE7007D003D /* Default@2x.png in Resources */,
+				FE0C67CB16D55BE7007D003D /* Default-568h@2x.png in Resources */,
+				FE0C67CE16D55BE7007D003D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0C67D416D55BE7007D003D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67E316D55BE7007D003D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE0C67D516D55BE7007D003D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE0C67AC16D55BE7007D003D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67C116D55BE7007D003D /* main.m in Sources */,
+				FE0C67C516D55BE7007D003D /* AppDelegate.m in Sources */,
+				FE0C67D116D55BE7007D003D /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0C67D216D55BE7007D003D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0C67E616D55BE7007D003D /* iMomentsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE0C67DD16D55BE7007D003D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE0C67AF16D55BE7007D003D /* iMoments */;
+			targetProxy = FE0C67DC16D55BE7007D003D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE0C67BD16D55BE7007D003D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0C67BE16D55BE7007D003D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0C67CD16D55BE7007D003D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		FE0C67E116D55BE7007D003D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0C67E216D55BE7007D003D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE0C67E716D55BE7007D003D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE0C67E816D55BE7007D003D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE0C67EA16D55BE7007D003D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
+				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE0C67EB16D55BE7007D003D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
+				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FE0C67ED16D55BE7007D003D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMoments.app/iMoments";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
+				INFOPLIST_FILE = "iMomentsTests/iMomentsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FE0C67EE16D55BE7007D003D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMoments.app/iMoments";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
+				INFOPLIST_FILE = "iMomentsTests/iMomentsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE0C67AA16D55BE7007D003D /* Build configuration list for PBXProject "iMoments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0C67E716D55BE7007D003D /* Debug */,
+				FE0C67E816D55BE7007D003D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE0C67E916D55BE7007D003D /* Build configuration list for PBXNativeTarget "iMoments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0C67EA16D55BE7007D003D /* Debug */,
+				FE0C67EB16D55BE7007D003D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE0C67EC16D55BE7007D003D /* Build configuration list for PBXNativeTarget "iMomentsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0C67ED16D55BE7007D003D /* Debug */,
+				FE0C67EE16D55BE7007D003D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE0C67A716D55BE7007D003D /* Project object */;
+}
