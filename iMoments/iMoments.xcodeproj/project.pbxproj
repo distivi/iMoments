@@ -16,18 +16,33 @@
 		FE0C67C716D55BE7007D003D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67C616D55BE7007D003D /* Default.png */; };
 		FE0C67C916D55BE7007D003D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67C816D55BE7007D003D /* Default@2x.png */; };
 		FE0C67CB16D55BE7007D003D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67CA16D55BE7007D003D /* Default-568h@2x.png */; };
-		FE0C67CE16D55BE7007D003D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */; };
-		FE0C67D116D55BE7007D003D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67D016D55BE7007D003D /* ViewController.m */; };
 		FE0C67D916D55BE7007D003D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67D816D55BE7007D003D /* SenTestingKit.framework */; };
 		FE0C67DA16D55BE7007D003D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B416D55BE7007D003D /* UIKit.framework */; };
 		FE0C67DB16D55BE7007D003D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B616D55BE7007D003D /* Foundation.framework */; };
 		FE0C67E316D55BE7007D003D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE0C67E116D55BE7007D003D /* InfoPlist.strings */; };
 		FE0C67E616D55BE7007D003D /* iMomentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67E516D55BE7007D003D /* iMomentsTests.m */; };
-		FE0C67F416D56535007D003D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67F316D56535007D003D /* BaseViewController.m */; };
 		FE0C67FA16D568B1007D003D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67F916D568B1007D003D /* MainViewController.m */; };
-		FE0C67FD16D568DC007D003D /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67FC16D568DB007D003D /* VideosViewController.m */; };
-		FE0C680016D568E8007D003D /* MomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C67FF16D568E7007D003D /* MomentsViewController.m */; };
 		FE0C680316D57477007D003D /* ShotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C680216D57477007D003D /* ShotVideoViewController.m */; };
+		FE42456316DF8BAE0099C7DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE42456216DF8BAE0099C7DF /* CoreData.framework */; };
+		FE42456716DF94450099C7DF /* ModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE42456616DF94450099C7DF /* ModelManager.m */; };
+		FE42456E16DF973C0099C7DF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE42456C16DF973C0099C7DF /* Model.xcdatamodeld */; };
+		FE42459416DFA8AC0099C7DF /* BaseVideoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FE42459316DFA8AC0099C7DF /* BaseVideoInterface.m */; };
+		FE42459716DFA8AD0099C7DF /* Moment.m in Sources */ = {isa = PBXBuildFile; fileRef = FE42459616DFA8AD0099C7DF /* Moment.m */; };
+		FE42459A16DFA8AD0099C7DF /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = FE42459916DFA8AD0099C7DF /* Video.m */; };
+		FE4245A916DFB48D0099C7DF /* VideosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4245A816DFB48D0099C7DF /* VideosTableViewController.m */; };
+		FE4245AF16DFB4AE0099C7DF /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4245AC16DFB4AE0099C7DF /* BaseTableViewController.m */; };
+		FE4245B016DFB4AE0099C7DF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4245AE16DFB4AE0099C7DF /* BaseViewController.m */; };
+		FE4245C416DFE0420099C7DF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245C316DFE0420099C7DF /* AssetsLibrary.framework */; };
+		FE4245C716DFE04A0099C7DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245C616DFE04A0099C7DF /* AVFoundation.framework */; };
+		FE4245C916DFE0540099C7DF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245C816DFE0540099C7DF /* CoreMedia.framework */; };
+		FE4245CB16DFE05E0099C7DF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CA16DFE05E0099C7DF /* MediaPlayer.framework */; };
+		FE4245CD16DFE0780099C7DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CC16DFE0780099C7DF /* MobileCoreServices.framework */; };
+		FE4245CF16DFE0820099C7DF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CE16DFE0810099C7DF /* QuartzCore.framework */; };
+		FE4245E516DFFC560099C7DF /* VideoRecordingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */; };
+		FE4245EB16E006980099C7DF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EA16E006980099C7DF /* CoreImage.framework */; };
+		FE4245ED16E006AC0099C7DF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EC16E006AC0099C7DF /* CoreVideo.framework */; };
+		FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */; };
+		FE5A500B16DC0FF400A6DC05 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5A500A16DC0FF400A6DC05 /* Engine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,27 +69,47 @@
 		FE0C67C616D55BE7007D003D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FE0C67C816D55BE7007D003D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FE0C67CA16D55BE7007D003D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FE0C67CD16D55BE7007D003D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FE0C67CF16D55BE7007D003D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FE0C67D016D55BE7007D003D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FE0C67D716D55BE7007D003D /* iMomentsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMomentsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0C67D816D55BE7007D003D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FE0C67E016D55BE7007D003D /* iMomentsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMomentsTests-Info.plist"; sourceTree = "<group>"; };
 		FE0C67E216D55BE7007D003D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FE0C67E416D55BE7007D003D /* iMomentsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMomentsTests.h; sourceTree = "<group>"; };
 		FE0C67E516D55BE7007D003D /* iMomentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMomentsTests.m; sourceTree = "<group>"; };
-		FE0C67F216D56535007D003D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		FE0C67F316D56535007D003D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		FE0C67F616D56593007D003D /* BaseUIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUIProtocol.h; sourceTree = "<group>"; };
 		FE0C67F716D5659F007D003D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FE0C67F816D568B1007D003D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FE0C67F916D568B1007D003D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		FE0C67FB16D568DB007D003D /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
-		FE0C67FC16D568DB007D003D /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
-		FE0C67FE16D568E7007D003D /* MomentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewController.h; sourceTree = "<group>"; };
-		FE0C67FF16D568E7007D003D /* MomentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewController.m; sourceTree = "<group>"; };
 		FE0C680116D57477007D003D /* ShotVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotVideoViewController.h; sourceTree = "<group>"; };
 		FE0C680216D57477007D003D /* ShotVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotVideoViewController.m; sourceTree = "<group>"; };
+		FE42456216DF8BAE0099C7DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FE42456516DF94450099C7DF /* ModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelManager.h; sourceTree = "<group>"; };
+		FE42456616DF94450099C7DF /* ModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelManager.m; sourceTree = "<group>"; };
+		FE42456D16DF973C0099C7DF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FE42459216DFA8AC0099C7DF /* BaseVideoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVideoInterface.h; sourceTree = "<group>"; };
+		FE42459316DFA8AC0099C7DF /* BaseVideoInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVideoInterface.m; sourceTree = "<group>"; };
+		FE42459516DFA8AD0099C7DF /* Moment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moment.h; sourceTree = "<group>"; };
+		FE42459616DFA8AD0099C7DF /* Moment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Moment.m; sourceTree = "<group>"; };
+		FE42459816DFA8AD0099C7DF /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		FE42459916DFA8AD0099C7DF /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		FE4245A716DFB48C0099C7DF /* VideosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosTableViewController.h; sourceTree = "<group>"; };
+		FE4245A816DFB48D0099C7DF /* VideosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosTableViewController.m; sourceTree = "<group>"; };
+		FE4245AB16DFB4AE0099C7DF /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		FE4245AC16DFB4AE0099C7DF /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		FE4245AD16DFB4AE0099C7DF /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FE4245AE16DFB4AE0099C7DF /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FE4245C316DFE0420099C7DF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FE4245C616DFE04A0099C7DF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FE4245C816DFE0540099C7DF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FE4245CA16DFE05E0099C7DF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FE4245CC16DFE0780099C7DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FE4245CE16DFE0810099C7DF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FE4245E316DFFC560099C7DF /* VideoRecordingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordingManager.h; sourceTree = "<group>"; };
+		FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordingManager.m; sourceTree = "<group>"; };
+		FE4245EA16E006980099C7DF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		FE4245EC16E006AC0099C7DF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE5A500916DC0FF400A6DC05 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		FE5A500A16DC0FF400A6DC05 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +117,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4245ED16E006AC0099C7DF /* CoreVideo.framework in Frameworks */,
+				FE4245EB16E006980099C7DF /* CoreImage.framework in Frameworks */,
+				FE4245CF16DFE0820099C7DF /* QuartzCore.framework in Frameworks */,
+				FE4245CD16DFE0780099C7DF /* MobileCoreServices.framework in Frameworks */,
+				FE4245CB16DFE05E0099C7DF /* MediaPlayer.framework in Frameworks */,
+				FE4245C916DFE0540099C7DF /* CoreMedia.framework in Frameworks */,
+				FE4245C716DFE04A0099C7DF /* AVFoundation.framework in Frameworks */,
+				FE4245C416DFE0420099C7DF /* AssetsLibrary.framework in Frameworks */,
+				FE42456316DF8BAE0099C7DF /* CoreData.framework in Frameworks */,
 				FE0C67B516D55BE7007D003D /* UIKit.framework in Frameworks */,
 				FE0C67B716D55BE7007D003D /* Foundation.framework in Frameworks */,
 				FE0C67B916D55BE7007D003D /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FE0C67BA16D55BE7007D003D /* iMoments */,
+				FE5A4FEE16DC00E900A6DC05 /* resources */,
 				FE0C67DE16D55BE7007D003D /* iMomentsTests */,
 				FE0C67B316D55BE7007D003D /* Frameworks */,
 				FE0C67B116D55BE7007D003D /* Products */,
@@ -123,6 +168,15 @@
 		FE0C67B316D55BE7007D003D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE4245EC16E006AC0099C7DF /* CoreVideo.framework */,
+				FE4245EA16E006980099C7DF /* CoreImage.framework */,
+				FE4245CE16DFE0810099C7DF /* QuartzCore.framework */,
+				FE4245CC16DFE0780099C7DF /* MobileCoreServices.framework */,
+				FE4245CA16DFE05E0099C7DF /* MediaPlayer.framework */,
+				FE4245C816DFE0540099C7DF /* CoreMedia.framework */,
+				FE4245C616DFE04A0099C7DF /* AVFoundation.framework */,
+				FE4245C316DFE0420099C7DF /* AssetsLibrary.framework */,
+				FE42456216DF8BAE0099C7DF /* CoreData.framework */,
 				FE0C67B416D55BE7007D003D /* UIKit.framework */,
 				FE0C67B616D55BE7007D003D /* Foundation.framework */,
 				FE0C67B816D55BE7007D003D /* CoreGraphics.framework */,
@@ -134,12 +188,9 @@
 		FE0C67BA16D55BE7007D003D /* iMoments */ = {
 			isa = PBXGroup;
 			children = (
-				FE0C67EF16D5636F007D003D /* classes */,
 				FE0C67C316D55BE7007D003D /* AppDelegate.h */,
 				FE0C67C416D55BE7007D003D /* AppDelegate.m */,
-				FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */,
-				FE0C67CF16D55BE7007D003D /* ViewController.h */,
-				FE0C67D016D55BE7007D003D /* ViewController.m */,
+				FE0C67EF16D5636F007D003D /* classes */,
 				FE0C67BB16D55BE7007D003D /* Supporting Files */,
 			);
 			path = iMoments;
@@ -182,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				FE0C67F516D56580007D003D /* Core */,
+				FE5A4FE816DBFFCF00A6DC05 /* Managers */,
+				FE5A4FE916DBFFCF00A6DC05 /* Models */,
 				FE0C67F016D56370007D003D /* UI */,
 			);
 			path = classes;
@@ -190,6 +243,7 @@
 		FE0C67F016D56370007D003D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FE5A4FEB16DC001B00A6DC05 /* Storyboards */,
 				FE0C67F116D56370007D003D /* Controllers */,
 			);
 			path = UI;
@@ -198,14 +252,11 @@
 		FE0C67F116D56370007D003D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE0C67F216D56535007D003D /* BaseViewController.h */,
-				FE0C67F316D56535007D003D /* BaseViewController.m */,
+				FE4245AA16DFB4AD0099C7DF /* Base controllers */,
 				FE0C67F816D568B1007D003D /* MainViewController.h */,
 				FE0C67F916D568B1007D003D /* MainViewController.m */,
-				FE0C67FB16D568DB007D003D /* VideosViewController.h */,
-				FE0C67FC16D568DB007D003D /* VideosViewController.m */,
-				FE0C67FE16D568E7007D003D /* MomentsViewController.h */,
-				FE0C67FF16D568E7007D003D /* MomentsViewController.m */,
+				FE4245A716DFB48C0099C7DF /* VideosTableViewController.h */,
+				FE4245A816DFB48D0099C7DF /* VideosTableViewController.m */,
 				FE0C680116D57477007D003D /* ShotVideoViewController.h */,
 				FE0C680216D57477007D003D /* ShotVideoViewController.m */,
 			);
@@ -219,6 +270,60 @@
 				FE0C67F716D5659F007D003D /* Constants.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		FE4245AA16DFB4AD0099C7DF /* Base controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE4245AB16DFB4AE0099C7DF /* BaseTableViewController.h */,
+				FE4245AC16DFB4AE0099C7DF /* BaseTableViewController.m */,
+				FE4245AD16DFB4AE0099C7DF /* BaseViewController.h */,
+				FE4245AE16DFB4AE0099C7DF /* BaseViewController.m */,
+			);
+			path = "Base controllers";
+			sourceTree = "<group>";
+		};
+		FE5A4FE816DBFFCF00A6DC05 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A500916DC0FF400A6DC05 /* Engine.h */,
+				FE5A500A16DC0FF400A6DC05 /* Engine.m */,
+				FE42456516DF94450099C7DF /* ModelManager.h */,
+				FE42456616DF94450099C7DF /* ModelManager.m */,
+				FE4245E316DFFC560099C7DF /* VideoRecordingManager.h */,
+				FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FE5A4FE916DBFFCF00A6DC05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE42456C16DF973C0099C7DF /* Model.xcdatamodeld */,
+				FE42459216DFA8AC0099C7DF /* BaseVideoInterface.h */,
+				FE42459316DFA8AC0099C7DF /* BaseVideoInterface.m */,
+				FE42459516DFA8AD0099C7DF /* Moment.h */,
+				FE42459616DFA8AD0099C7DF /* Moment.m */,
+				FE42459816DFA8AD0099C7DF /* Video.h */,
+				FE42459916DFA8AD0099C7DF /* Video.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE5A4FEB16DC001B00A6DC05 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FE5A4FEE16DC00E900A6DC05 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = resources;
+			path = iMoments/resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +401,7 @@
 				FE0C67C716D55BE7007D003D /* Default.png in Resources */,
 				FE0C67C916D55BE7007D003D /* Default@2x.png in Resources */,
 				FE0C67CB16D55BE7007D003D /* Default-568h@2x.png in Resources */,
-				FE0C67CE16D55BE7007D003D /* MainStoryboard.storyboard in Resources */,
+				FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,12 +438,18 @@
 			files = (
 				FE0C67C116D55BE7007D003D /* main.m in Sources */,
 				FE0C67C516D55BE7007D003D /* AppDelegate.m in Sources */,
-				FE0C67D116D55BE7007D003D /* ViewController.m in Sources */,
-				FE0C67F416D56535007D003D /* BaseViewController.m in Sources */,
 				FE0C67FA16D568B1007D003D /* MainViewController.m in Sources */,
-				FE0C67FD16D568DC007D003D /* VideosViewController.m in Sources */,
-				FE0C680016D568E8007D003D /* MomentsViewController.m in Sources */,
 				FE0C680316D57477007D003D /* ShotVideoViewController.m in Sources */,
+				FE5A500B16DC0FF400A6DC05 /* Engine.m in Sources */,
+				FE42456716DF94450099C7DF /* ModelManager.m in Sources */,
+				FE42456E16DF973C0099C7DF /* Model.xcdatamodeld in Sources */,
+				FE42459416DFA8AC0099C7DF /* BaseVideoInterface.m in Sources */,
+				FE42459716DFA8AD0099C7DF /* Moment.m in Sources */,
+				FE42459A16DFA8AD0099C7DF /* Video.m in Sources */,
+				FE4245A916DFB48D0099C7DF /* VideosTableViewController.m in Sources */,
+				FE4245AF16DFB4AE0099C7DF /* BaseTableViewController.m in Sources */,
+				FE4245B016DFB4AE0099C7DF /* BaseViewController.m in Sources */,
+				FE4245E516DFFC560099C7DF /* VideoRecordingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,14 +478,6 @@
 				FE0C67BE16D55BE7007D003D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FE0C67CC16D55BE7007D003D /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE0C67CD16D55BE7007D003D /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		FE0C67E116D55BE7007D003D /* InfoPlist.strings */ = {
@@ -446,6 +549,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
 				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
@@ -461,6 +565,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
 				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
@@ -521,6 +626,7 @@
 				FE0C67EB16D55BE7007D003D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE0C67EC16D55BE7007D003D /* Build configuration list for PBXNativeTarget "iMomentsTests" */ = {
 			isa = XCConfigurationList;
@@ -529,8 +635,22 @@
 				FE0C67EE16D55BE7007D003D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE42456C16DF973C0099C7DF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE42456D16DF973C0099C7DF /* Model.xcdatamodel */,
+			);
+			currentVersion = FE42456D16DF973C0099C7DF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE0C67A716D55BE7007D003D /* Project object */;
 }

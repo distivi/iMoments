@@ -14,27 +14,25 @@
 
 @implementation ShotVideoViewController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [[[Engine sharedInstants] videoRecordingManager] startSession];
+  [[[Engine sharedInstants] videoRecordingManager] setDelegate:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [[[Engine sharedInstants] videoRecordingManager] stopSession];
+}
+
 #pragma mark - BaseUIProtocol
 
 - (void)setCustomSetings {
-  
+
 }
 
 - (void)createUI {
-  picker = [[UIImagePickerController alloc] init];
-  picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-  picker.videoQuality = UIImagePickerControllerQualityTypeMedium;
-  picker.wantsFullScreenLayout = YES;
- 
-  picker.showsCameraControls = YES;
-  picker.navigationBarHidden = YES;
-  picker.toolbarHidden = YES;
-  picker.delegate = self;
-  
-  [self addChildViewController:picker];
-  [picker didMoveToParentViewController:self];
-  [self.view addSubview:picker.view];
 }
 
 - (void)updateUI {
@@ -45,20 +43,11 @@
   
 }
 
-#pragma mark - UIImagePickerControllerDelegate
+#pragma mark - VideoRecordingManagerDelegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
-  NSLog(@"didFinishPickingImage");
+- (void)captureVideoImageOutput:(UIImage *) outputImage {
+  _videoImageView.image = outputImage;
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  NSLog(@"didFinishPickingMediaWithInfo: %@",info);
-
-
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-  NSLog(@"imagePickerControllerDidCancel");
-}
 
 @end

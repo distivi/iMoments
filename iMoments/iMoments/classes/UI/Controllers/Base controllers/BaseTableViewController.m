@@ -1,19 +1,18 @@
 //
-//  BaseViewController.m
+//  BaseTableViewController.m
 //  iMoments
 //
-//  Created by Stas Dymedyuk on 2/20/13.
+//  Created by Stas Dymedyuk on 2/28/13.
 //  Copyright (c) 2013 Stas Dymedyuk. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface BaseViewController ()
+@interface BaseTableViewController ()
 
 @end
 
-@implementation BaseViewController
-
+@implementation BaseTableViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -38,23 +37,21 @@
   // Dispose of any resources that can be recreated.
 }
 
-
 - (void)setCustomSetings {
-  NSLog(@"call setCustomSetings in BaseViewController");
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
 }
 
 - (void)createUI {
-  NSLog(@"call createUI in BaseViewController");
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
 }
 
 - (void)updateUI {
-  NSLog(@"call updateU in BaseViewController");
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
 }
 
 - (void)deleteUI {
-  NSLog(@"call deleteUI in BaseViewController");
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
 }
-
 
 
 @end

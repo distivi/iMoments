@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "VideoRecordingManager.h"
 
-@interface ShotVideoViewController : BaseViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-  UIImagePickerController *picker;
-}
+@interface ShotVideoViewController : BaseViewController<VideoRecordingManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
 
 @end

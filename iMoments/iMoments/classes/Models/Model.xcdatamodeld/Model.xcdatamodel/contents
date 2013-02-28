@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12A269" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BaseVideoInterface" representedClassName="BaseVideoInterface" isAbstract="YES" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Moment" representedClassName="Moment" parentEntity="BaseVideoInterface" syncable="YES">
+        <attribute name="startTime" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="video" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Video" inverseName="moments" inverseEntity="Video" syncable="YES"/>
+    </entity>
+    <entity name="Video" representedClassName="Video" parentEntity="BaseVideoInterface" syncable="YES">
+        <relationship name="moments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Moment" inverseName="video" inverseEntity="Moment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BaseVideoInterface" positionX="-63" positionY="-243" width="128" height="105"/>
+        <element name="Moment" positionX="63" positionY="-33" width="128" height="73"/>
+        <element name="Video" positionX="-207" positionY="-36" width="128" height="58"/>
+    </elements>
+</model>
