@@ -46,7 +46,7 @@
 - (void)createUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   _mainBackgroundImageView = [[CustomImageView alloc] initWithFrame:self.view.bounds];  
-  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"darkdenim3"]];
+  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"real_cf"]];
   [self.view addSubview:_mainBackgroundImageView];
 }
 

@@ -95,11 +95,14 @@
 		FE4245CB16DFE05E0099C7DF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CA16DFE05E0099C7DF /* MediaPlayer.framework */; };
 		FE4245CD16DFE0780099C7DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CC16DFE0780099C7DF /* MobileCoreServices.framework */; };
 		FE4245CF16DFE0820099C7DF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CE16DFE0810099C7DF /* QuartzCore.framework */; };
-		FE4245E516DFFC560099C7DF /* VideoRecordingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */; };
 		FE4245EB16E006980099C7DF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EA16E006980099C7DF /* CoreImage.framework */; };
 		FE4245ED16E006AC0099C7DF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EC16E006AC0099C7DF /* CoreVideo.framework */; };
 		FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */; };
 		FE5A500B16DC0FF400A6DC05 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5A500A16DC0FF400A6DC05 /* Engine.m */; };
+		FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510616E1213900617F15 /* AVCamUtilities.m */; };
+		FE90510D16E121D600617F15 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510A16E121D600617F15 /* AVCamRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FE90510E16E121D600617F15 /* VideoRecordingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510C16E121D600617F15 /* VideoRecordingManager.m */; };
+		FEC220CC16E0F27B00A1A6AC /* OrientationsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,13 +221,19 @@
 		FE4245CA16DFE05E0099C7DF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FE4245CC16DFE0780099C7DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FE4245CE16DFE0810099C7DF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FE4245E316DFFC560099C7DF /* VideoRecordingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordingManager.h; sourceTree = "<group>"; };
-		FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordingManager.m; sourceTree = "<group>"; };
 		FE4245EA16E006980099C7DF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FE4245EC16E006AC0099C7DF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FE5A500916DC0FF400A6DC05 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		FE5A500A16DC0FF400A6DC05 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
+		FE90510516E1213900617F15 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		FE90510616E1213900617F15 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
+		FE90510916E121D600617F15 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		FE90510A16E121D600617F15 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		FE90510B16E121D600617F15 /* VideoRecordingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordingManager.h; sourceTree = "<group>"; };
+		FE90510C16E121D600617F15 /* VideoRecordingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordingManager.m; sourceTree = "<group>"; };
+		FEC220CA16E0F27B00A1A6AC /* OrientationsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationsTool.h; sourceTree = "<group>"; };
+		FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationsTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +445,7 @@
 		FE0C67EF16D5636F007D003D /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				FEC220C816E0F25B00A1A6AC /* tools */,
 				FE0C67F516D56580007D003D /* Core */,
 				FE5A4FE816DBFFCF00A6DC05 /* Managers */,
 				FE5A4FE916DBFFCF00A6DC05 /* Models */,
@@ -495,8 +505,7 @@
 				FE5A500A16DC0FF400A6DC05 /* Engine.m */,
 				FE42456516DF94450099C7DF /* ModelManager.h */,
 				FE42456616DF94450099C7DF /* ModelManager.m */,
-				FE4245E316DFFC560099C7DF /* VideoRecordingManager.h */,
-				FE4245E416DFFC560099C7DF /* VideoRecordingManager.m */,
+				FE90510816E121D600617F15 /* VideoManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -521,6 +530,28 @@
 				FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FE90510816E121D600617F15 /* VideoManager */ = {
+			isa = PBXGroup;
+			children = (
+				FE90510B16E121D600617F15 /* VideoRecordingManager.h */,
+				FE90510C16E121D600617F15 /* VideoRecordingManager.m */,
+				FE90510916E121D600617F15 /* AVCamRecorder.h */,
+				FE90510A16E121D600617F15 /* AVCamRecorder.m */,
+			);
+			path = VideoManager;
+			sourceTree = "<group>";
+		};
+		FEC220C816E0F25B00A1A6AC /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				FE90510516E1213900617F15 /* AVCamUtilities.h */,
+				FE90510616E1213900617F15 /* AVCamUtilities.m */,
+				FEC220CA16E0F27B00A1A6AC /* OrientationsTool.h */,
+				FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -702,8 +733,11 @@
 				FE4245A916DFB48D0099C7DF /* VideosTableViewController.m in Sources */,
 				FE4245AF16DFB4AE0099C7DF /* BaseTableViewController.m in Sources */,
 				FE4245B016DFB4AE0099C7DF /* BaseViewController.m in Sources */,
-				FE4245E516DFFC560099C7DF /* VideoRecordingManager.m in Sources */,
 				30594EB616E027C200C8B873 /* CustomImageView.m in Sources */,
+				FEC220CC16E0F27B00A1A6AC /* OrientationsTool.m in Sources */,
+				FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */,
+				FE90510D16E121D600617F15 /* AVCamRecorder.m in Sources */,
+				FE90510E16E121D600617F15 /* VideoRecordingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

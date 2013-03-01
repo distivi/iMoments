@@ -73,8 +73,13 @@
 
   addVideoButton.frame = CGRectMake(30, 10, 260, 50);
   addVideoButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [addVideoButton setBackgroundImage:[buttonImage resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5)]
+  CGSize imageSize = buttonImage.size;
+  [addVideoButton setBackgroundImage:[buttonImage resizableImageWithCapInsets:UIEdgeInsetsMake(imageSize.height/2,
+                                                                                               imageSize.width/2,
+                                                                                               imageSize.height/2,
+                                                                                               imageSize.width/2)]   
                   forState:UIControlStateNormal];
+
   [addVideoButton setTitle:@"ADD VIDEO" forState:UIControlStateNormal];
   [addVideoButton addTarget:self action:@selector(addNewVideo) forControlEvents:UIControlEventTouchDown];
   [header addSubview:addVideoButton];
