@@ -38,6 +38,7 @@
 
 - (void)setSettigns {
   self.backgroundColor = [UIColor colorWithPatternImage:self.image];
+  self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   super.image = nil;
 }
 

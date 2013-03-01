@@ -43,10 +43,9 @@
 
 - (void)createUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
-  _mainBackgroundImageView = [[CustomImageView alloc] initWithFrame:self.view.bounds];
-  _mainBackgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"carbon_fibre"]];
-  [self.view addSubview:_mainBackgroundImageView];
+  _mainBackgroundImageView = [[CustomImageView alloc] initWithFrame:self.view.bounds];  
+  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"light_alu"]];
+  [(UITableView *)self.view setBackgroundView:_mainBackgroundImageView];
 }
 
 - (void)updateUI {
