@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseUIProtocol.h"
+#import "CustomImageView.h"
 
 @interface BaseTableViewController : UITableViewController<BaseUIProtocol>
+
+@property (nonatomic, strong) CustomImageView *mainBackgroundImageView;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "BaseUIProtocol.h"
+#import "CustomImageView.h"
 
 @interface BaseViewController : UIViewController<BaseUIProtocol>
+
+@property (nonatomic, strong) CustomImageView *mainBackgroundImageView;
 
 @end

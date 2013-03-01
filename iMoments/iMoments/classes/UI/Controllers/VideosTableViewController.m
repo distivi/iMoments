@@ -32,14 +32,16 @@
 }
 
 - (void)createUI {
-  
+  [super createUI];
 }
 
 - (void)updateUI {
+  [super updateUI];
   
 }
 
 - (void)deleteUI {
+  [super deleteUI];
   
 }
 

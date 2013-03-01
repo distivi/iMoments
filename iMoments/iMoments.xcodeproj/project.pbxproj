@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30594EA716E026AD00C8B873 /* carbon_fibre.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594E9F16E026AD00C8B873 /* carbon_fibre.png */; };
+		30594EA816E026AD00C8B873 /* carbon_fibre@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA016E026AD00C8B873 /* carbon_fibre@2X.png */; };
+		30594EA916E026AD00C8B873 /* large_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA116E026AD00C8B873 /* large_leather.png */; };
+		30594EAA16E026AD00C8B873 /* large_leather@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA216E026AD00C8B873 /* large_leather@2X.png */; };
+		30594EAB16E026AD00C8B873 /* outlets.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA316E026AD00C8B873 /* outlets.png */; };
+		30594EAC16E026AD00C8B873 /* outlets@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA416E026AD00C8B873 /* outlets@2X.png */; };
+		30594EAD16E026AD00C8B873 /* white_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA516E026AD00C8B873 /* white_leather.png */; };
+		30594EAE16E026AD00C8B873 /* white_leather@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 30594EA616E026AD00C8B873 /* white_leather@2X.png */; };
+		30594EB616E027C200C8B873 /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30594EB516E027C200C8B873 /* CustomImageView.m */; };
 		FE0C67B516D55BE7007D003D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B416D55BE7007D003D /* UIKit.framework */; };
 		FE0C67B716D55BE7007D003D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B616D55BE7007D003D /* Foundation.framework */; };
 		FE0C67B916D55BE7007D003D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C67B816D55BE7007D003D /* CoreGraphics.framework */; };
@@ -56,6 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30594E9F16E026AD00C8B873 /* carbon_fibre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carbon_fibre.png; sourceTree = "<group>"; };
+		30594EA016E026AD00C8B873 /* carbon_fibre@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carbon_fibre@2X.png"; sourceTree = "<group>"; };
+		30594EA116E026AD00C8B873 /* large_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_leather.png; sourceTree = "<group>"; };
+		30594EA216E026AD00C8B873 /* large_leather@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_leather@2X.png"; sourceTree = "<group>"; };
+		30594EA316E026AD00C8B873 /* outlets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outlets.png; sourceTree = "<group>"; };
+		30594EA416E026AD00C8B873 /* outlets@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "outlets@2X.png"; sourceTree = "<group>"; };
+		30594EA516E026AD00C8B873 /* white_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_leather.png; sourceTree = "<group>"; };
+		30594EA616E026AD00C8B873 /* white_leather@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_leather@2X.png"; sourceTree = "<group>"; };
+		30594EB416E027C200C8B873 /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
+		30594EB516E027C200C8B873 /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
 		FE0C67B016D55BE7007D003D /* iMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0C67B416D55BE7007D003D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE0C67B616D55BE7007D003D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,11 +164,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30594E9D16E026AD00C8B873 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				30594E9E16E026AD00C8B873 /* BG Textures */,
+			);
+			name = resources;
+			path = iMoments/resources;
+			sourceTree = "<group>";
+		};
+		30594E9E16E026AD00C8B873 /* BG Textures */ = {
+			isa = PBXGroup;
+			children = (
+				30594E9F16E026AD00C8B873 /* carbon_fibre.png */,
+				30594EA016E026AD00C8B873 /* carbon_fibre@2X.png */,
+				30594EA116E026AD00C8B873 /* large_leather.png */,
+				30594EA216E026AD00C8B873 /* large_leather@2X.png */,
+				30594EA316E026AD00C8B873 /* outlets.png */,
+				30594EA416E026AD00C8B873 /* outlets@2X.png */,
+				30594EA516E026AD00C8B873 /* white_leather.png */,
+				30594EA616E026AD00C8B873 /* white_leather@2X.png */,
+			);
+			path = "BG Textures";
+			sourceTree = "<group>";
+		};
+		30594EB316E0279100C8B873 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				30594EB416E027C200C8B873 /* CustomImageView.h */,
+				30594EB516E027C200C8B873 /* CustomImageView.m */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		FE0C67A516D55BE7007D003D = {
 			isa = PBXGroup;
 			children = (
 				FE0C67BA16D55BE7007D003D /* iMoments */,
-				FE5A4FEE16DC00E900A6DC05 /* resources */,
+				30594E9D16E026AD00C8B873 /* resources */,
 				FE0C67DE16D55BE7007D003D /* iMomentsTests */,
 				FE0C67B316D55BE7007D003D /* Frameworks */,
 				FE0C67B116D55BE7007D003D /* Products */,
@@ -243,6 +295,7 @@
 		FE0C67F016D56370007D003D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				30594EB316E0279100C8B873 /* CustomViews */,
 				FE5A4FEB16DC001B00A6DC05 /* Storyboards */,
 				FE0C67F116D56370007D003D /* Controllers */,
 			);
@@ -316,14 +369,6 @@
 				FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		FE5A4FEE16DC00E900A6DC05 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = resources;
-			path = iMoments/resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +447,14 @@
 				FE0C67C916D55BE7007D003D /* Default@2x.png in Resources */,
 				FE0C67CB16D55BE7007D003D /* Default-568h@2x.png in Resources */,
 				FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */,
+				30594EA716E026AD00C8B873 /* carbon_fibre.png in Resources */,
+				30594EA816E026AD00C8B873 /* carbon_fibre@2X.png in Resources */,
+				30594EA916E026AD00C8B873 /* large_leather.png in Resources */,
+				30594EAA16E026AD00C8B873 /* large_leather@2X.png in Resources */,
+				30594EAB16E026AD00C8B873 /* outlets.png in Resources */,
+				30594EAC16E026AD00C8B873 /* outlets@2X.png in Resources */,
+				30594EAD16E026AD00C8B873 /* white_leather.png in Resources */,
+				30594EAE16E026AD00C8B873 /* white_leather@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +503,7 @@
 				FE4245AF16DFB4AE0099C7DF /* BaseTableViewController.m in Sources */,
 				FE4245B016DFB4AE0099C7DF /* BaseViewController.m in Sources */,
 				FE4245E516DFFC560099C7DF /* VideoRecordingManager.m in Sources */,
+				30594EB616E027C200C8B873 /* CustomImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

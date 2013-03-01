@@ -45,6 +45,10 @@
 
 - (void)createUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+  _mainBackgroundImageView = [[CustomImageView alloc] initWithFrame:self.view.bounds];
+  _mainBackgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"carbon_fibre"]];
+  [self.view addSubview:_mainBackgroundImageView];
 }
 
 - (void)updateUI {
@@ -53,6 +57,7 @@
 
 - (void)deleteUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+  _mainBackgroundImageView = nil;
 }
 
 
