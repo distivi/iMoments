@@ -102,6 +102,9 @@
 		FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510616E1213900617F15 /* AVCamUtilities.m */; };
 		FE90510D16E121D600617F15 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510A16E121D600617F15 /* AVCamRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FE90510E16E121D600617F15 /* VideoRecordingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510C16E121D600617F15 /* VideoRecordingManager.m */; };
+		FEA75F2C16E4E94200F8A74F /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA75F2B16E4E94200F8A74F /* BaseTabBarController.m */; };
+		FEA75F3B16E4F12200F8A74F /* VideoLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA75F3A16E4F12200F8A74F /* VideoLibraryTableViewController.m */; };
+		FEA75F4C16E51FEF00F8A74F /* AssetBrowserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA75F4B16E51FEF00F8A74F /* AssetBrowserItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FEC220CC16E0F27B00A1A6AC /* OrientationsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +235,13 @@
 		FE90510A16E121D600617F15 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
 		FE90510B16E121D600617F15 /* VideoRecordingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordingManager.h; sourceTree = "<group>"; };
 		FE90510C16E121D600617F15 /* VideoRecordingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordingManager.m; sourceTree = "<group>"; };
+		FEA75F2A16E4E94200F8A74F /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		FEA75F2B16E4E94200F8A74F /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		FEA75F3916E4F12200F8A74F /* VideoLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoLibraryTableViewController.h; sourceTree = "<group>"; };
+		FEA75F3A16E4F12200F8A74F /* VideoLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoLibraryTableViewController.m; sourceTree = "<group>"; };
+		FEA75F4016E506A500F8A74F /* Mackroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mackroses.h; sourceTree = "<group>"; };
+		FEA75F4A16E51FEF00F8A74F /* AssetBrowserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetBrowserItem.h; sourceTree = "<group>"; };
+		FEA75F4B16E51FEF00F8A74F /* AssetBrowserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetBrowserItem.m; sourceTree = "<group>"; };
 		FEC220CA16E0F27B00A1A6AC /* OrientationsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationsTool.h; sourceTree = "<group>"; };
 		FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationsTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -474,6 +484,8 @@
 				FE4245A816DFB48D0099C7DF /* VideosTableViewController.m */,
 				FE0C680116D57477007D003D /* ShotVideoViewController.h */,
 				FE0C680216D57477007D003D /* ShotVideoViewController.m */,
+				FEA75F3916E4F12200F8A74F /* VideoLibraryTableViewController.h */,
+				FEA75F3A16E4F12200F8A74F /* VideoLibraryTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -483,6 +495,7 @@
 			children = (
 				FE0C67F616D56593007D003D /* BaseUIProtocol.h */,
 				FE0C67F716D5659F007D003D /* Constants.h */,
+				FEA75F4016E506A500F8A74F /* Mackroses.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -490,6 +503,8 @@
 		FE4245AA16DFB4AD0099C7DF /* Base controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEA75F2A16E4E94200F8A74F /* BaseTabBarController.h */,
+				FEA75F2B16E4E94200F8A74F /* BaseTabBarController.m */,
 				FE4245AB16DFB4AE0099C7DF /* BaseTableViewController.h */,
 				FE4245AC16DFB4AE0099C7DF /* BaseTableViewController.m */,
 				FE4245AD16DFB4AE0099C7DF /* BaseViewController.h */,
@@ -513,6 +528,7 @@
 		FE5A4FE916DBFFCF00A6DC05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FEA75F4916E51FEF00F8A74F /* AssetModels */,
 				FE42456C16DF973C0099C7DF /* Model.xcdatamodeld */,
 				FE42459216DFA8AC0099C7DF /* BaseVideoInterface.h */,
 				FE42459316DFA8AC0099C7DF /* BaseVideoInterface.m */,
@@ -541,6 +557,15 @@
 				FE90510A16E121D600617F15 /* AVCamRecorder.m */,
 			);
 			path = VideoManager;
+			sourceTree = "<group>";
+		};
+		FEA75F4916E51FEF00F8A74F /* AssetModels */ = {
+			isa = PBXGroup;
+			children = (
+				FEA75F4A16E51FEF00F8A74F /* AssetBrowserItem.h */,
+				FEA75F4B16E51FEF00F8A74F /* AssetBrowserItem.m */,
+			);
+			path = AssetModels;
 			sourceTree = "<group>";
 		};
 		FEC220C816E0F25B00A1A6AC /* tools */ = {
@@ -738,6 +763,9 @@
 				FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */,
 				FE90510D16E121D600617F15 /* AVCamRecorder.m in Sources */,
 				FE90510E16E121D600617F15 /* VideoRecordingManager.m in Sources */,
+				FEA75F2C16E4E94200F8A74F /* BaseTabBarController.m in Sources */,
+				FEA75F3B16E4F12200F8A74F /* VideoLibraryTableViewController.m in Sources */,
+				FEA75F4C16E51FEF00F8A74F /* AssetBrowserItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,10 +865,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
 				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -853,10 +882,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoments/iMoments-Prefix.pch";
 				INFOPLIST_FILE = "iMoments/iMoments-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "013B0A64-CB27-4167-ACE3-F851CE3CB35D";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

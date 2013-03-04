@@ -7,21 +7,25 @@
 //
 
 #import "VideoRecordingManager.h"
-#import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVCaptureOutput.h>
 
 #import "OrientationsTool.h"
 
-@interface VideoRecordingManager()<AVCaptureVideoDataOutputSampleBufferDelegate> {
+@interface VideoRecordingManager() {
   UIImageOrientation imageOrientationDuringRecording;
 }
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureDevice *captureDevice;
 @property (nonatomic, strong) AVCaptureDeviceInput *deviceInput;
-
 @property (nonatomic, strong) CIContext *context;
+
+- (BOOL)isSupportFrontCamera;
+- (AVCaptureDevice *)captureDeviceWithPosition:(AVCaptureDevicePosition) devicePosition;
+- (BOOL)isSupportTorchForCaptureDevice:(AVCaptureDevice *) captureDevice;
+- (void)setCuptureDeviceToSession:(AVCaptureDevice *) captureDevice;
+- (void)removeAllInputsFromSession;
 
 @end
 
@@ -40,38 +44,53 @@
     } else {
       NSLog(@"Can't add Capture device input to session");
     }
-    
-    
-    AVCaptureVideoDataOutput *videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
-    videoDataOutput.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
-                                                                forKey:(id)kCVPixelBufferPixelFormatTypeKey];
-    [videoDataOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];    
-    
-    if ([_session canAddOutput:videoDataOutput]) {
-      [_session addOutput:videoDataOutput];
-    } else {
-      videoDataOutput = nil;
-      NSLog(@"Can't add Video data otput to session");
-    }
-        
+            
     NSURL *outputFileURL = [self tempFileURL];
     _recorder = [[AVCamRecorder alloc] initWithSession:_session outputFileURL:outputFileURL];
-    [_recorder setDelegate:self];
-    
+    [_recorder setDelegate:self];    
   }
   return self;
 }
 
 - (void)setDelegate:(id<VideoRecordingManagerDelegate>)delegate {
   _delegate = delegate;
-  if (_delegate && [_delegate respondsToSelector:@selector(videoPreviewView)]) {
-    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
-    captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    UIView *previewView = [_delegate videoPreviewView];
-    captureVideoPreviewLayer.frame = previewView.bounds;
-    captureVideoPreviewLayer.needsDisplayOnBoundsChange = YES;
+  if (_delegate) {
+    if ([_delegate respondsToSelector:@selector(videoPreviewView)]) {
+      UIView *previewView = [_delegate videoPreviewView];
+      
+      for (CALayer *tmpLayer in previewView.layer.sublayers) {
+        if ([tmpLayer isKindOfClass:[AVCaptureVideoPreviewLayer class]]) {
+          [tmpLayer removeFromSuperlayer];
+        }
+      }
+      
+      AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
+      captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;      
+      captureVideoPreviewLayer.frame = previewView.bounds;
+      captureVideoPreviewLayer.needsDisplayOnBoundsChange = YES;
+      
+      
+
+      
+      [previewView.layer addSublayer:captureVideoPreviewLayer];
+    }
     
-    [previewView.layer addSublayer:captureVideoPreviewLayer];
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:hasTorch:)]) {
+      [_delegate videoRecordingManager:self hasTorch:[self isSupportTorchForCaptureDevice:_captureDevice]];
+    }
+    
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:hasFrontCamera:)]) {
+      [_delegate videoRecordingManager:self hasFrontCamera:[self isSupportFrontCamera]];
+    }
+    
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:torchDidSetMode:)]) {
+      [_delegate videoRecordingManager:self torchDidSetMode:AVCaptureTorchModeOff];
+    }
+    
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:deviceDidChangePosition:)]) {
+      [_delegate videoRecordingManager:self deviceDidChangePosition:AVCaptureDevicePositionBack];
+    }
+
   }
 }
 
@@ -94,6 +113,14 @@
   }
 }
 
+- (void)changeDevicePosition:(AVCaptureDevicePosition) devicePosition {
+  AVCaptureDevice *newCaptureDevice = [self captureDeviceWithPosition:devicePosition];
+  [self setCuptureDeviceToSession:newCaptureDevice];
+  if (_delegate && [_delegate respondsToSelector:@selector(videoRecordingManager:deviceDidChangePosition:)]) {
+    [_delegate videoRecordingManager:self deviceDidChangePosition:devicePosition];
+  }
+}
+
 - (void)startRecordingVideo {
   //imageOrientationDuringRecording = [OrientationsTool imageOrientationFromDeviceOrientation:[[UIDevice currentDevice] orientation]];
   NSLog(@"%@",NSStringFromSelector(_cmd));
@@ -107,7 +134,7 @@
   }
 
   [self removeFile:[[self recorder] outputFileURL]];
-  [_recorder startRecordingWithOrientation:[OrientationsTool captureVideoOrientationFromStatusBarOrientation]];
+  [_recorder startRecordingWithOrientation:[OrientationsTool captureVideoOrientationFromDeviceOrientation:[[UIDevice currentDevice] orientation]]];
 }
 
 - (void)pauseRecordingVideo {
@@ -118,33 +145,6 @@
 - (void)finishRecordingVideo {
   NSLog(@"%@",NSStringFromSelector(_cmd));
   [_recorder stopRecording];
-}
-
-
-#pragma mark - AVCaptureAudioDataOutputSampleBufferDelegate
-
-- (void)captureOutput:(AVCaptureOutput *)captureOutput
-didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
-       fromConnection:(AVCaptureConnection *)connection {
-  
-  CVPixelBufferRef pb = CMSampleBufferGetImageBuffer(sampleBuffer);
-  CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pb];
-  
-  CGImageRef ref = [self.context createCGImage:ciImage fromRect:ciImage.extent];
-  
-  UIImageOrientation currentImageOrientation;
-  if (_recorder.isRecording) {
-    currentImageOrientation = imageOrientationDuringRecording;
-  } else {
-    currentImageOrientation = [OrientationsTool imageOrientationFromDeviceOrientation:[[UIDevice currentDevice] orientation]];
-  }
-  
-  UIImage *outputImage = [UIImage imageWithCGImage:ref scale:1.0 orientation:currentImageOrientation];
-  CGImageRelease(ref);
-  
-  if (_delegate && [_delegate respondsToSelector:@selector(captureVideoImageOutput:)]) {
-    [_delegate captureVideoImageOutput:outputImage];
-  }
 }
 
 #pragma mark - AVCamRecorderDelegate
@@ -248,6 +248,68 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
       [[self delegate] videoRecordingManager:self didFailWithError:error];
     }
 	}
+}
+
+- (BOOL)isSupportFrontCamera {
+  NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+  for (AVCaptureDevice *device in devices) {
+    if ([device position] == AVCaptureDevicePositionFront) {
+      return YES;
+    }
+  }
+  return NO;
+}
+
+- (AVCaptureDevice *)captureDeviceWithPosition:(AVCaptureDevicePosition) devicePosition {
+  NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+  for (AVCaptureDevice *device in devices) {
+    if ([device position] == devicePosition) {
+      return device;
+    }
+  }
+  return nil;
+}
+
+- (BOOL)isSupportTorchForCaptureDevice:(AVCaptureDevice *) captureDevice {
+  return [captureDevice hasTorch];
+}
+
+- (void)setTorchMode:(AVCaptureTorchMode) torchMode {
+  Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
+  if (captureDeviceClass != nil) {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch] && [device isFlashModeSupported:torchMode]){
+      [device lockForConfiguration:nil];
+      [device setTorchMode:torchMode];
+      [device unlockForConfiguration];
+      if (_delegate && [_delegate respondsToSelector:@selector(videoRecordingManager:torchDidSetMode:)]) {
+        [_delegate videoRecordingManager:self torchDidSetMode:torchMode];
+      }
+    }
+  }
+}
+
+
+
+- (void)setCuptureDeviceToSession:(AVCaptureDevice *) captureDevice {
+  [_session stopRunning];
+  [self removeAllInputsFromSession];
+  
+  NSError *error = nil;
+  AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
+  if (!input) {
+    // Handle the error appropriately.
+    NSLog(@"ERROR: trying to open camera: %@", error);
+  } else {
+    [_session addInput:input];
+  }
+  [_session startRunning];
+}
+
+- (void)removeAllInputsFromSession {
+  for (AVCaptureDeviceInput *tmpInput in _session.inputs) {
+    [_session removeInput:tmpInput];
+  }
 }
 
 @end

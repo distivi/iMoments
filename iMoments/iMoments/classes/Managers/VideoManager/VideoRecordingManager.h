@@ -7,15 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import "AVCamRecorder.h"
-
 
 @class VideoRecordingManager;
 
 @protocol VideoRecordingManagerDelegate <NSObject>
 
-- (void)captureVideoImageOutput:(UIImage *) outputImage;
 - (UIView *)videoPreviewView;
+
+- (void)videoRecordingManager:(VideoRecordingManager *)captureManager hasTorch:(BOOL) hasTorch;
+- (void)videoRecordingManager:(VideoRecordingManager *)captureManager hasFrontCamera:(BOOL) hasFrontCamera;
+- (void)videoRecordingManager:(VideoRecordingManager *)captureManager torchDidSetMode:(AVCaptureTorchMode) torchMode;
+- (void)videoRecordingManager:(VideoRecordingManager *)captureManager deviceDidChangePosition:(AVCaptureDevicePosition) devicePosition;
+
 - (void)videoRecordingManager:(VideoRecordingManager *)captureManager didFailWithError:(NSError *)error;
 - (void)videoRecordingManagerRecordingBegan:(VideoRecordingManager *) videoRecordingManager;
 - (void)videoRecordingManagerRecordingFinished:(VideoRecordingManager *) videoRecordingManager;
@@ -30,6 +35,9 @@
 
 - (void)startSession;
 - (void)stopSession;
+
+- (void)setTorchMode:(AVCaptureTorchMode) torchMode;
+- (void)changeDevicePosition:(AVCaptureDevicePosition) devicePosition;
 
 - (void)startRecordingVideo;
 - (void)pauseRecordingVideo;

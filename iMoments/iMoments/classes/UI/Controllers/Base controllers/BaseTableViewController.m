@@ -10,6 +10,8 @@
 
 @interface BaseTableViewController ()
 
+- (void)interfaceOrientationFromNotification:(NSNotification *) notification;
+
 @end
 
 @implementation BaseTableViewController
@@ -23,12 +25,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(interfaceOrientationFromNotification:)
+                                               name:kNotification_DeviceRotation
+                                             object:nil];
   [self updateUI];
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-  [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-  [self updateUI];
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,9 +58,22 @@
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));  
 }
 
+- (void)updateUIWithInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation {
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+}
+
 - (void)deleteUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   _mainBackgroundImageView = nil;
+}
+
+#pragma mark - Private methods
+
+- (void)interfaceOrientationFromNotification:(NSNotification *) notification {
+  NSDictionary *userInfo = notification.userInfo;
+  NSNumber *interfaceOrientation = [userInfo objectForKey:kInterfaceOrientation];
+  
+  [self updateUIWithInterfaceOrientation:[interfaceOrientation integerValue]];
 }
 
 

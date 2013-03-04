@@ -13,4 +13,6 @@
   #import <Foundation/Foundation.h>
   #import <CoreData/CoreData.h>
   #import "Engine.h"
+  #import "Constants.h"
+  #import "Mackroses.h"
 #endif

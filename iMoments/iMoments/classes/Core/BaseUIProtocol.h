@@ -13,6 +13,7 @@
 - (void)setCustomSetings;
 - (void)createUI;
 - (void)updateUI;
+- (void)updateUIWithInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
 - (void)deleteUI;
 
 @end

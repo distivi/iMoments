@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *openVideoLibrary;
 
 - (IBAction)back:(id)sender;
+- (IBAction)turnOnOffTorch:(id)sender;
+- (IBAction)changeCamera:(id)sender;
 - (IBAction)startPauseRecord:(id)sender;
 
 @end

@@ -26,7 +26,7 @@
   
   currentImageOrientation = UIImageOrientationRight;
   
-  switch ([[UIDevice currentDevice] orientation]) {
+  switch (deviceOrientation) {
     case UIDeviceOrientationUnknown: {
       deviceOrientationStr = @"UIDeviceOrientationUnknown";
       break;
@@ -102,6 +102,104 @@
   NSLog(@"%@ : %@",NSStringFromSelector(@selector(_cmd)),logOrientation);
   
   return currentVideoOrientation;
+}
+
++ (UIInterfaceOrientation)interfaceOrientationFromDeviceOrientation:(UIDeviceOrientation) deviceOrientation {
+  UIInterfaceOrientation currentInterfaceOrientation;
+
+  switch (deviceOrientation) {
+    case UIDeviceOrientationPortrait: {
+      currentInterfaceOrientation = UIInterfaceOrientationPortrait;
+      break;
+    }
+      
+    case UIDeviceOrientationLandscapeLeft: {
+      currentInterfaceOrientation = UIInterfaceOrientationLandscapeRight;
+      break;
+    }
+      
+    case UIDeviceOrientationLandscapeRight: {
+      currentInterfaceOrientation = UIInterfaceOrientationLandscapeLeft;
+      break;
+    }
+      
+    case UIDeviceOrientationPortraitUpsideDown: {
+      currentInterfaceOrientation = UIInterfaceOrientationPortraitUpsideDown;
+      break;
+    }
+      
+    default: {
+      currentInterfaceOrientation = -1;
+      break;
+    }
+  } 
+  
+  return currentInterfaceOrientation;
+}
+
++ (AVCaptureVideoOrientation)captureVideoOrientationFromDeviceOrientation:(UIDeviceOrientation) deviceOrientation {
+  UIInterfaceOrientation currentInterfaceOrientation = [OrientationsTool interfaceOrientationFromDeviceOrientation:deviceOrientation];
+  AVCaptureVideoOrientation currentVideoOrientation;
+    
+  switch (currentInterfaceOrientation) {
+    case UIInterfaceOrientationPortrait: {
+      currentVideoOrientation = AVCaptureVideoOrientationPortrait;
+
+      break;
+    }
+    case UIInterfaceOrientationPortraitUpsideDown: {
+      currentVideoOrientation = AVCaptureVideoOrientationPortraitUpsideDown;
+
+      break;
+    }
+    case UIInterfaceOrientationLandscapeLeft: {
+      currentVideoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+
+      break;
+    }
+    case UIInterfaceOrientationLandscapeRight: {
+      currentVideoOrientation = AVCaptureVideoOrientationLandscapeRight;
+
+      break;
+    }
+  }
+    
+  return currentVideoOrientation;
+}
+
++ (NSInteger)degreesForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation {
+  NSInteger degrees = 0;
+  
+  switch (interfaceOrientation) {
+    case UIInterfaceOrientationPortrait: {
+      degrees = 0;
+      break;
+    }
+      
+    case UIInterfaceOrientationPortraitUpsideDown: {
+      degrees = 180;
+      break;
+    }
+      
+    case UIInterfaceOrientationLandscapeLeft: {
+      degrees = -90;
+      break;
+    }
+      
+    case UIInterfaceOrientationLandscapeRight: {
+      degrees = 90;
+      break;
+    }
+      
+    default:
+      degrees = 0;
+      break;
+  }
+  return degrees;
+}
+
++ (CGFloat)radiansForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation {
+  return degreesToRadians([OrientationsTool degreesForInterfaceOrientation:interfaceOrientation]);  
 }
 
 @end

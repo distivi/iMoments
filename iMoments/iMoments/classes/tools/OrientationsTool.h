@@ -12,5 +12,9 @@
 
 + (UIImageOrientation)imageOrientationFromDeviceOrientation:(UIDeviceOrientation) deviceOrientation;
 + (AVCaptureVideoOrientation)captureVideoOrientationFromStatusBarOrientation;
++ (UIInterfaceOrientation)interfaceOrientationFromDeviceOrientation:(UIDeviceOrientation) deviceOrientation;
++ (AVCaptureVideoOrientation)captureVideoOrientationFromDeviceOrientation:(UIDeviceOrientation) deviceOrientation;
++ (NSInteger)degreesForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
++ (CGFloat)radiansForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
 
 @end
