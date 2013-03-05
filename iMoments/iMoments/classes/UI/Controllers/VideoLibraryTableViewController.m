@@ -8,17 +8,31 @@
 
 #import "VideoLibraryTableViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 #import "AssetBrowserItem.h"
+#import "MediaPlayerViewController.h"
 
 @interface VideoLibraryTableViewController () {
   NSMutableArray *assetItems;
+  MPMoviePlayerViewController *moviePlayerViewController;
 }
 
 - (void)updateAssetsLibrary;
+- (void)videoPlayBackDidFinish:(NSNotification *) notification;
+- (void)showVideoWithUrl:(NSURL *) videoUrl;
+
 
 @end
 
 @implementation VideoLibraryTableViewController
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.destinationViewController respondsToSelector:@selector(setVideoURL:)]) {
+    AssetBrowserItem *tmpItem = (AssetBrowserItem *)assetItems[[self.tableView indexPathForSelectedRow].row];
+    [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:tmpItem.URL];
+  }
+}
 
 
 #pragma mark - BaseUIProtocol
@@ -102,6 +116,29 @@
   }];
 }
 
+- (void)videoPlayBackDidFinish:(NSNotification *) notification {
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+}
+
+
+- (void)showVideoWithUrl:(NSURL *) videoUrl {
+  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+  
+//  moviePlayerViewController = nil;
+//  moviePlayerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
+//  [[moviePlayerViewController moviePlayer] prepareToPlay];
+//  [[moviePlayerViewController moviePlayer] setShouldAutoplay:NO];
+//  [[moviePlayerViewController moviePlayer] setControlStyle:MPMovieControlStyleFullscreen];  
+//  [[moviePlayerViewController moviePlayer] setInitialPlaybackTime:(NSTimeInterval)5];
+//  [[moviePlayerViewController moviePlayer] setEndPlaybackTime:(NSTimeInterval)10];
+//  [[moviePlayerViewController moviePlayer] setRepeatMode:MPMovieRepeatModeNone];
+//  
+//  [[NSNotificationCenter defaultCenter] addObserver:self
+//                                           selector:@selector(videoPlayBackDidFinish:)
+//                                               name:MPMoviePlayerPlaybackDidFinishNotification
+//                                             object:moviePlayerViewController];
+//  [self presentMoviePlayerViewControllerAnimated:moviePlayerViewController];
+}
 
 
 @end

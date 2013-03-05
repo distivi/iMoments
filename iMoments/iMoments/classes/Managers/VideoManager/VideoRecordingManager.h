@@ -23,7 +23,9 @@
 
 - (void)videoRecordingManager:(VideoRecordingManager *)captureManager didFailWithError:(NSError *)error;
 - (void)videoRecordingManagerRecordingBegan:(VideoRecordingManager *) videoRecordingManager;
-- (void)videoRecordingManagerRecordingFinished:(VideoRecordingManager *) videoRecordingManager;
+- (void)videoRecordingManagerRecordingAudioFinished:(VideoRecordingManager *) videoRecordingManager;
+- (void)videoRecordingManagerRecordingVideoFinished:(VideoRecordingManager *) videoRecordingManager
+                                        withFileURL:(NSURL *) videoUrl;
 
 @end
 
@@ -40,7 +42,6 @@
 - (void)changeDevicePosition:(AVCaptureDevicePosition) devicePosition;
 
 - (void)startRecordingVideo;
-- (void)pauseRecordingVideo;
 - (void)finishRecordingVideo;
 
 @end

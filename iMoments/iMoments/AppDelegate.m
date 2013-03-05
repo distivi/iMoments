@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSData+Encryption.h"
 
 @implementation AppDelegate
 
@@ -16,7 +17,34 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{  
+{
+  
+  
+  NSString *password = @"My sicret password";
+  NSString *key = @"ololo";
+  NSLog(@"password %@",password);
+  
+  NSData *aData = [password dataUsingEncoding:NSUTF8StringEncoding];
+  NSLog(@"aData %@",aData);
+  
+  NSString *Aresult = [[NSString alloc] initWithData:aData
+                                           encoding:NSUTF8StringEncoding];
+  NSLog(@"Aresult %@",Aresult);
+  
+  NSData *bData = [aData AES256EncryptWithKey:key];
+  NSLog(@"bData %@",bData);
+  
+  NSString *Bresult = [[NSString alloc] initWithData:bData
+                                            encoding:NSUTF8StringEncoding];
+  NSLog(@"Bresult %@",Bresult);
+  
+  NSData *cData = [bData AES256DecryptWithKey:@"321"];
+  NSLog(@"cData %@",cData);
+  
+  NSString *result = [[NSString alloc] initWithData:cData
+                                           encoding:NSUTF8StringEncoding];
+  NSLog(@"result %@",result);
+  
   return YES;
 }
 

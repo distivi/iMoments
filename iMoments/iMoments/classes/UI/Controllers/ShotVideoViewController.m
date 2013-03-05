@@ -8,6 +8,7 @@
 
 #import "ShotVideoViewController.h"
 #import "OrientationsTool.h"
+#import "MediaPlayerViewController.h"
 
 @interface ShotVideoViewController () {
   AVCaptureTorchMode currentTorchMode;
@@ -33,6 +34,12 @@
   [self.navigationController setNavigationBarHidden:NO animated:animated];
   [super viewWillDisappear:animated];
   [[[Engine sharedInstants] videoRecordingManager] stopSession];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.destinationViewController respondsToSelector:@selector(setVideoURL:)]) {    
+    [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:(NSURL *)sender];
+  }
 }
 
 #pragma mark - BaseUIProtocol
@@ -189,13 +196,20 @@
 - (void)videoRecordingManagerRecordingBegan:(VideoRecordingManager *) videoRecordingManager {
   NSLog(@"%@",NSStringFromSelector(_cmd));
   [_startPauseButton setTitle:@"pause" forState:UIControlStateNormal];
-  
 }
 
-- (void)videoRecordingManagerRecordingFinished:(VideoRecordingManager *) videoRecordingManager {
+- (void)videoRecordingManagerRecordingAudioFinished:(VideoRecordingManager *) videoRecordingManager {
   NSLog(@"%@",NSStringFromSelector(_cmd));
-  [_startPauseButton setTitle:@"start" forState:UIControlStateNormal];  
+  [_startPauseButton setTitle:@"start" forState:UIControlStateNormal];
 }
+
+- (void)videoRecordingManagerRecordingVideoFinished:(VideoRecordingManager *) videoRecordingManager
+                                        withFileURL:(NSURL *) videoUrl {
+  NSLog(@"%@",NSStringFromSelector(_cmd));
+  [_startPauseButton setTitle:@"start" forState:UIControlStateNormal];
+  [self performSegueWithIdentifier:@"show video" sender:videoUrl];
+}
+
 
 
 @end

@@ -97,6 +97,12 @@
 		FE4245CF16DFE0820099C7DF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245CE16DFE0810099C7DF /* QuartzCore.framework */; };
 		FE4245EB16E006980099C7DF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EA16E006980099C7DF /* CoreImage.framework */; };
 		FE4245ED16E006AC0099C7DF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4245EC16E006AC0099C7DF /* CoreVideo.framework */; };
+		FE44387616E65E330079C77C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = FE44387216E65E330079C77C /* camera.png */; };
+		FE44387716E65E330079C77C /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE44387316E65E330079C77C /* camera@2x.png */; };
+		FE44387816E65E330079C77C /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = FE44387416E65E330079C77C /* lightbulb.png */; };
+		FE44387916E65E330079C77C /* lightbulb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE44387516E65E330079C77C /* lightbulb@2x.png */; };
+		FE44388116E67D780079C77C /* MediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44388016E67D780079C77C /* MediaPlayerViewController.m */; };
+		FE44388616E68EC00079C77C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44388516E68EC00079C77C /* NSData+Encryption.m */; };
 		FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */; };
 		FE5A500B16DC0FF400A6DC05 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5A500A16DC0FF400A6DC05 /* Engine.m */; };
 		FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510616E1213900617F15 /* AVCamUtilities.m */; };
@@ -226,6 +232,14 @@
 		FE4245CE16DFE0810099C7DF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FE4245EA16E006980099C7DF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FE4245EC16E006AC0099C7DF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		FE44387216E65E330079C77C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		FE44387316E65E330079C77C /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		FE44387416E65E330079C77C /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		FE44387516E65E330079C77C /* lightbulb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightbulb@2x.png"; sourceTree = "<group>"; };
+		FE44387F16E67D780079C77C /* MediaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerViewController.h; sourceTree = "<group>"; };
+		FE44388016E67D780079C77C /* MediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerViewController.m; sourceTree = "<group>"; };
+		FE44388416E68EC00079C77C /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
+		FE44388516E68EC00079C77C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
 		FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FE5A500916DC0FF400A6DC05 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		FE5A500A16DC0FF400A6DC05 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
@@ -317,6 +331,7 @@
 		30594E9D16E026AD00C8B873 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE44387116E65E330079C77C /* icons */,
 				3051115B16E0A09000FE129E /* BG for buttons */,
 				30594E9E16E026AD00C8B873 /* BG Textures */,
 			);
@@ -455,6 +470,7 @@
 		FE0C67EF16D5636F007D003D /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				FE44388316E68EA90079C77C /* Categories */,
 				FEC220C816E0F25B00A1A6AC /* tools */,
 				FE0C67F516D56580007D003D /* Core */,
 				FE5A4FE816DBFFCF00A6DC05 /* Managers */,
@@ -486,6 +502,8 @@
 				FE0C680216D57477007D003D /* ShotVideoViewController.m */,
 				FEA75F3916E4F12200F8A74F /* VideoLibraryTableViewController.h */,
 				FEA75F3A16E4F12200F8A74F /* VideoLibraryTableViewController.m */,
+				FE44387F16E67D780079C77C /* MediaPlayerViewController.h */,
+				FE44388016E67D780079C77C /* MediaPlayerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -511,6 +529,26 @@
 				FE4245AE16DFB4AE0099C7DF /* BaseViewController.m */,
 			);
 			path = "Base controllers";
+			sourceTree = "<group>";
+		};
+		FE44387116E65E330079C77C /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				FE44387216E65E330079C77C /* camera.png */,
+				FE44387316E65E330079C77C /* camera@2x.png */,
+				FE44387416E65E330079C77C /* lightbulb.png */,
+				FE44387516E65E330079C77C /* lightbulb@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		FE44388316E68EA90079C77C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FE44388416E68EC00079C77C /* NSData+Encryption.h */,
+				FE44388516E68EC00079C77C /* NSData+Encryption.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		FE5A4FE816DBFFCF00A6DC05 /* Managers */ = {
@@ -711,6 +749,10 @@
 				3051119316E0A09000FE129E /* whiteButton@2x.png in Resources */,
 				3051119416E0A09000FE129E /* whiteButtonHighlight.png in Resources */,
 				3051119516E0A09000FE129E /* whiteButtonHighlight@2x.png in Resources */,
+				FE44387616E65E330079C77C /* camera.png in Resources */,
+				FE44387716E65E330079C77C /* camera@2x.png in Resources */,
+				FE44387816E65E330079C77C /* lightbulb.png in Resources */,
+				FE44387916E65E330079C77C /* lightbulb@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +808,8 @@
 				FEA75F2C16E4E94200F8A74F /* BaseTabBarController.m in Sources */,
 				FEA75F3B16E4F12200F8A74F /* VideoLibraryTableViewController.m in Sources */,
 				FEA75F4C16E51FEF00F8A74F /* AssetBrowserItem.m in Sources */,
+				FE44388116E67D780079C77C /* MediaPlayerViewController.m in Sources */,
+				FE44388616E68EC00079C77C /* NSData+Encryption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

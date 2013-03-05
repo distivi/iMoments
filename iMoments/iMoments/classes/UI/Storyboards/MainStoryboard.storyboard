@@ -39,11 +39,11 @@
             </objects>
             <point key="canvasLocation" x="516" y="1047"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller-->
         <scene sceneID="1NA-QZ-O5h">
             <objects>
                 <navigationController id="SGE-7V-fdj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VgP-6F-YDO"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera.png" id="VgP-6F-YDO"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="pRO-6l-mkt">
@@ -124,11 +124,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0V0-eS-x1c">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0V0-eS-x1c">
                                 <rect key="frame" x="232" y="15" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="light">
+                                <state key="normal" title="light" image="lightbulb.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -181,7 +181,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4b1-y8-vNQ" kind="push" id="w63-Bt-EAE"/>
+                                    <segue destination="4b1-y8-vNQ" kind="push" identifier="open photo library" id="w63-Bt-EAE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lkn-qw-3K3">
@@ -211,11 +211,48 @@
                         <outlet property="startPauseButton" destination="vbQ-3I-CXv" id="BL7-hw-ZbU"/>
                         <outlet property="turnLightButton" destination="0V0-eS-x1c" id="iJ7-sx-O1z"/>
                         <outlet property="videoImageView" destination="QkP-Rw-1Sa" id="D2g-KI-Kw2"/>
+                        <segue destination="Mvn-0n-Mmi" kind="modal" identifier="show video" id="pln-Sd-bw3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7x-hr-dmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068" y="-757"/>
+        </scene>
+        <!--Media Player View Controller-->
+        <scene sceneID="Rcs-Qx-C1k">
+            <objects>
+                <viewController id="Mvn-0n-Mmi" customClass="MediaPlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zE4-Se-PPH">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="auY-r5-HRi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="Kvo-Dg-BaY">
+                                        <connections>
+                                            <action selector="cancel:" destination="Mvn-0n-Mmi" id="XYe-u1-C39"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lM9-SW-xTK"/>
+                                    <barButtonItem systemItem="save" id="KSU-Ol-hgO">
+                                        <connections>
+                                            <action selector="save:" destination="Mvn-0n-Mmi" id="9lt-jj-0t6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolBar" destination="auY-r5-HRi" id="3s3-a6-uKQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARK-1d-dKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="-2085"/>
         </scene>
         <!--Video Library Table View Controller-->
         <scene sceneID="4su-4a-z5A">
@@ -234,6 +271,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="Mvn-0n-Mmi" kind="modal" id="ERb-fA-LDu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -245,7 +285,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZl-du-yGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="-1429"/>
+            <point key="canvasLocation" x="1723" y="-757"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="02q-yh-DOv">
@@ -299,9 +339,16 @@
             <point key="canvasLocation" x="-42" y="1043"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.png" width="26" height="26"/>
+        <image name="lightbulb.png" width="26" height="26"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="pln-Sd-bw3"/>
+    </inferredMetricsTieBreakers>
 </document>

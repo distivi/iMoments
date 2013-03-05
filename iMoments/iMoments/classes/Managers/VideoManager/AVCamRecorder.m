@@ -110,6 +110,8 @@
         [videoConnection setVideoOrientation:videoOrientation];
     
     [[self movieFileOutput] startRecordingToOutputFileURL:[self outputFileURL] recordingDelegate:self];
+ 
+ 
 }
 
 -(void)stopRecording

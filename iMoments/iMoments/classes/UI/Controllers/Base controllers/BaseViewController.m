@@ -46,7 +46,6 @@
 
 #pragma mark - base UI protocol
 
-
 - (void)setCustomSetings {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
 }

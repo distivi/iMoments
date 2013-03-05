@@ -69,9 +69,6 @@
       captureVideoPreviewLayer.frame = previewView.bounds;
       captureVideoPreviewLayer.needsDisplayOnBoundsChange = YES;
       
-      
-
-      
       [previewView.layer addSublayer:captureVideoPreviewLayer];
     }
     
@@ -84,13 +81,12 @@
     }
     
     if ([_delegate respondsToSelector:@selector(videoRecordingManager:torchDidSetMode:)]) {
-      [_delegate videoRecordingManager:self torchDidSetMode:AVCaptureTorchModeOff];
+      [_delegate videoRecordingManager:self torchDidSetMode:_captureDevice.torchMode];
     }
     
     if ([_delegate respondsToSelector:@selector(videoRecordingManager:deviceDidChangePosition:)]) {
-      [_delegate videoRecordingManager:self deviceDidChangePosition:AVCaptureDevicePositionBack];
+      [_delegate videoRecordingManager:self deviceDidChangePosition:_captureDevice.position];
     }
-
   }
 }
 
@@ -116,9 +112,16 @@
 - (void)changeDevicePosition:(AVCaptureDevicePosition) devicePosition {
   AVCaptureDevice *newCaptureDevice = [self captureDeviceWithPosition:devicePosition];
   [self setCuptureDeviceToSession:newCaptureDevice];
-  if (_delegate && [_delegate respondsToSelector:@selector(videoRecordingManager:deviceDidChangePosition:)]) {
-    [_delegate videoRecordingManager:self deviceDidChangePosition:devicePosition];
+  if (_delegate) {
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:deviceDidChangePosition:)]) {
+      [_delegate videoRecordingManager:self deviceDidChangePosition:devicePosition];
+    }
+    
+    if ([_delegate respondsToSelector:@selector(videoRecordingManager:hasTorch:)]) {
+      [_delegate videoRecordingManager:self hasTorch:[self isSupportTorchForCaptureDevice:newCaptureDevice]];
+    }
   }
+  
 }
 
 - (void)startRecordingVideo {
@@ -135,11 +138,6 @@
 
   [self removeFile:[[self recorder] outputFileURL]];
   [_recorder startRecordingWithOrientation:[OrientationsTool captureVideoOrientationFromDeviceOrientation:[[UIDevice currentDevice] orientation]]];
-}
-
-- (void)pauseRecordingVideo {
-  NSLog(@"%@",NSStringFromSelector(_cmd));
-
 }
 
 - (void)finishRecordingVideo {
@@ -167,8 +165,8 @@
 			[[UIApplication sharedApplication] endBackgroundTask:[self backgroundRecordingID]];
 		}
     
-		if ([[self delegate] respondsToSelector:@selector(videoRecordingManagerRecordingFinished:)]) {
-			[[self delegate] videoRecordingManagerRecordingFinished:self];
+		if ([[self delegate] respondsToSelector:@selector(videoRecordingManagerRecordingAudioFinished:)]) {
+			[[self delegate] videoRecordingManagerRecordingAudioFinished:self];
 		}
 	}
 	else {
@@ -179,14 +177,14 @@
                                     if ([[self delegate] respondsToSelector:@selector(videoRecordingManager:didFailWithError:)]) {
                                       [[self delegate] videoRecordingManager:self didFailWithError:error];
                                     }
-                                  }
-                                  
-                                  if ([[UIDevice currentDevice] isMultitaskingSupported]) {
-                                    [[UIApplication sharedApplication] endBackgroundTask:[self backgroundRecordingID]];
-                                  }
-                                  
-                                  if ([[self delegate] respondsToSelector:@selector(videoRecordingManagerRecordingFinished:)]) {
-                                    [[self delegate] videoRecordingManagerRecordingFinished:self];
+                                  } else {
+                                    if ([[UIDevice currentDevice] isMultitaskingSupported]) {
+                                      [[UIApplication sharedApplication] endBackgroundTask:[self backgroundRecordingID]];
+                                    }
+                                    
+                                    if ([[self delegate] respondsToSelector:@selector(videoRecordingManagerRecordingVideoFinished:withFileURL:)]) {
+                                      [[self delegate] videoRecordingManagerRecordingVideoFinished:self withFileURL:assetURL];
+                                    }
                                   }
                                 }];
 		library = nil;
@@ -294,9 +292,11 @@
 - (void)setCuptureDeviceToSession:(AVCaptureDevice *) captureDevice {
   [_session stopRunning];
   [self removeAllInputsFromSession];
+  _captureDevice = nil;
+  _captureDevice = captureDevice;
   
   NSError *error = nil;
-  AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
+  AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:&error];
   if (!input) {
     // Handle the error appropriately.
     NSLog(@"ERROR: trying to open camera: %@", error);
