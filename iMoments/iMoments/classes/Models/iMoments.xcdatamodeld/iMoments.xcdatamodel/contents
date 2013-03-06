@@ -11,11 +11,12 @@
         <relationship name="video" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Video" inverseName="moments" inverseEntity="Video" syncable="YES"/>
     </entity>
     <entity name="Video" representedClassName="Video" parentEntity="BaseVideoInterface" syncable="YES">
+        <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="moments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Moment" inverseName="video" inverseEntity="Moment" syncable="YES"/>
     </entity>
     <elements>
         <element name="BaseVideoInterface" positionX="-63" positionY="-243" width="128" height="105"/>
         <element name="Moment" positionX="63" positionY="-33" width="128" height="73"/>
-        <element name="Video" positionX="-207" positionY="-36" width="128" height="58"/>
+        <element name="Video" positionX="-243" positionY="8" width="128" height="73"/>
     </elements>
 </model>

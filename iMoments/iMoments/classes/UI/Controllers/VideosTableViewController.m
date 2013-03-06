@@ -7,9 +7,14 @@
 //
 
 #import "VideosTableViewController.h"
+#import "MomentsTableViewController.h"
 #import "CustomImageView.h"
+#import "Video.h"
+
 
 @interface VideosTableViewController ()
+
+@property (nonatomic, strong) NSArray *videos;
 
 @end
 
@@ -18,11 +23,21 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.navigationController setNavigationBarHidden:YES animated:animated];
+  _videos = nil;
+  _videos = [[[Engine sharedInstants] modelManager] allVideos];
+  [self.tableView reloadData];  
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
   [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"Detail Video Screen"]) {
+    NSInteger selectedVideoIndex = [self.tableView indexPathForSelectedRow].row;
+    [(MomentsTableViewController *)segue.destinationViewController setVideo:_videos[selectedVideoIndex]];
+  }
 }
 
 
@@ -90,7 +105,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 100;
+  return _videos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,7 +118,9 @@
                                   reuseIdentifier:cellIdentifier];
   }
   
-  cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+  Video *currentVideo = _videos[indexPath.row];
+  
+  cell.textLabel.text = currentVideo.title;
   
   return cell;
 }

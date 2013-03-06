@@ -2,7 +2,7 @@
 //  Video.h
 //  iMoments
 //
-//  Created by Stas Dymedyuk on 2/28/13.
+//  Created by Stas Dymedyuk on 3/6/13.
 //  Copyright (c) 2013 Stas Dymedyuk. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @interface Video : BaseVideoInterface
 
+@property (nonatomic, retain) NSString * videoURL;
 @property (nonatomic, retain) NSSet *moments;
 @end
 

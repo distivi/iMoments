@@ -53,8 +53,9 @@
 - (void)createUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   _mainBackgroundImageView = [[CustomImageView alloc] initWithFrame:self.view.bounds];  
-  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"real_cf"]];
+  [_mainBackgroundImageView setImage:[UIImage imageNamed:@"light_alu"]];
   [self.view addSubview:_mainBackgroundImageView];
+  [self.view sendSubviewToBack:_mainBackgroundImageView];
 }
 
 - (void)updateUI {
@@ -68,6 +69,7 @@
 - (void)deleteUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   _mainBackgroundImageView = nil;
+  self.view = nil;
 }
 
 #pragma mark - Private methods

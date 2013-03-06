@@ -36,4 +36,11 @@
   return _videoRecordingManager;
 }
 
+- (FileManager *)fileManager {
+  if (!_fileManager) {
+    _fileManager = [[FileManager alloc] init];
+  }
+  return _fileManager;
+}
+
 @end

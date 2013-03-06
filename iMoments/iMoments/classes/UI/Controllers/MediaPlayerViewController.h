@@ -20,6 +20,7 @@
 @interface MediaPlayerViewController : BaseViewController
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarButton;
 
 @property (nonatomic, strong) NSURL *videoURL;
 @property (nonatomic, weak) id<MediaPlayerViewControllerDelegate> delegate;

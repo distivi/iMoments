@@ -2,7 +2,7 @@
 //  Video.m
 //  iMoments
 //
-//  Created by Stas Dymedyuk on 2/28/13.
+//  Created by Stas Dymedyuk on 3/6/13.
 //  Copyright (c) 2013 Stas Dymedyuk. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 
 @implementation Video
 
+@dynamic videoURL;
 @dynamic moments;
 
 @end

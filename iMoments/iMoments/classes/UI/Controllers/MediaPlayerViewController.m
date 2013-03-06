@@ -68,6 +68,9 @@
     [self.view addSubview:_moviePlayer.view];
     [_moviePlayer setFullscreen:YES animated:YES];
   }
+  
+  [_saveBarButton setEnabled:(_delegate != nil)];
+  
 }
 
 - (void)updateUI {
@@ -103,4 +106,8 @@
   }*/
 }
 
+- (void)viewDidUnload {
+  [self setSaveBarButton:nil];
+  [super viewDidUnload];
+}
 @end

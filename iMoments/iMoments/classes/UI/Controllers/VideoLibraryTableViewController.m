@@ -12,8 +12,9 @@
 
 #import "AssetBrowserItem.h"
 #import "MediaPlayerViewController.h"
+#import "EditVideoInfoViewController.h"
 
-@interface VideoLibraryTableViewController () {
+@interface VideoLibraryTableViewController ()<MediaPlayerViewControllerDelegate> {
   NSMutableArray *assetItems;
   MPMoviePlayerViewController *moviePlayerViewController;
 }
@@ -28,8 +29,14 @@
 @implementation VideoLibraryTableViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue.destinationViewController respondsToSelector:@selector(setVideoURL:)]) {
+  if ([segue.identifier isEqualToString:@"edit video"]) {
+    if (sender && [sender isMemberOfClass:[NSURL class]]) {
+      EditVideoInfoViewController *nextVC = (EditVideoInfoViewController *)segue.destinationViewController;
+      nextVC.videoURL = (NSURL *)sender;
+    }
+  } else if ([segue.destinationViewController respondsToSelector:@selector(setVideoURL:)]) {
     AssetBrowserItem *tmpItem = (AssetBrowserItem *)assetItems[[self.tableView indexPathForSelectedRow].row];
+    [(MediaPlayerViewController *)segue.destinationViewController setDelegate:self];
     [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:tmpItem.URL];
   }
 }
@@ -57,6 +64,18 @@
   [super deleteUI];
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   assetItems = nil;
+}
+
+#pragma mark - MediaPlayerViewControllerDelegate
+
+- (void)mediaPlayerViewController:(MediaPlayerViewController *) mediaPlayer didFinishWithUrl:(NSURL *) videoUrl {
+  NSLog(@"%@ %@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+  
+  [self performSegueWithIdentifier:@"edit video" sender:videoUrl];
+}
+
+- (void)mediaPlayerViewControllerDidCancel:(MediaPlayerViewController *) mediaPlayer {
+  NSLog(@"%@ %@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
 }
 
 #pragma mark - UITableViewDataSource

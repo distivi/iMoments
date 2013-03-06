@@ -12,6 +12,20 @@
 
 @interface ModelManager : NSObject
 
+- (void)saveContext;
+
+//------------ Select --------------
 - (NSArray *)allVideos;
+
+
+//------------ Insert --------------
+- (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title;
+- (void)addVideo:(Video *) video;
+
+
+//------------ Delete --------------
+- (void)deleteVideo:(Video *) video;
+
+
 
 @end

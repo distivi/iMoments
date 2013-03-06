@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
+  /*
   
   NSString *password = @"My sicret password";
   NSString *key = @"ololo";
@@ -43,7 +43,7 @@
   
   NSString *result = [[NSString alloc] initWithData:cData
                                            encoding:NSUTF8StringEncoding];
-  NSLog(@"result %@",result);
+  NSLog(@"result %@",result);*/
   
   return YES;
 }
@@ -116,6 +116,7 @@
     return _managedObjectModel;
   }
   NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iMoments" withExtension:@"momd"];
+  //NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iMoments" withExtension:@"mom" subdirectory:@"iMoments.momd"];
   _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
   return _managedObjectModel;
 }

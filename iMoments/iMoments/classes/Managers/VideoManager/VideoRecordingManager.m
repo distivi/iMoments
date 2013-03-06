@@ -23,6 +23,7 @@
 
 - (BOOL)isSupportFrontCamera;
 - (AVCaptureDevice *)captureDeviceWithPosition:(AVCaptureDevicePosition) devicePosition;
+- (AVCaptureDevice *) audioDevice;
 - (BOOL)isSupportTorchForCaptureDevice:(AVCaptureDevice *) captureDevice;
 - (void)setCuptureDeviceToSession:(AVCaptureDevice *) captureDevice;
 - (void)removeAllInputsFromSession;
@@ -38,11 +39,18 @@
     
     _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     _deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_captureDevice error:nil];
+    AVCaptureDeviceInput *audioInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self audioDevice] error:nil];
     
     if ([_session canAddInput:_deviceInput]) {
       [_session addInput:_deviceInput];
     } else {
       NSLog(@"Can't add Capture device input to session");
+    }
+    
+    if ([_session canAddInput:audioInput]) {
+      [_session addInput:audioInput];
+    } else {
+      NSLog(@"Can't add Audio device input to session");
     }
             
     NSURL *outputFileURL = [self tempFileURL];
@@ -219,7 +227,7 @@
   return outputURL;
 }
 
-- (void) removeFile:(NSURL *)fileURL
+- (void)removeFile:(NSURL *)fileURL
 {
   NSString *filePath = [fileURL path];
   NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -264,6 +272,15 @@
     if ([device position] == devicePosition) {
       return device;
     }
+  }
+  return nil;
+}
+
+- (AVCaptureDevice *) audioDevice
+{
+  NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio];
+  if ([devices count] > 0) {
+    return [devices objectAtIndex:0];
   }
   return nil;
 }

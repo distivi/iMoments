@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ModelManager.h"
 #import "VideoRecordingManager.h"
+#import "FileManager.h"
 
 @interface Engine : NSObject
 
 @property (nonatomic, strong) ModelManager *modelManager;
 @property (nonatomic, strong) VideoRecordingManager *videoRecordingManager;
+@property (nonatomic, strong) FileManager *fileManager;
 
 + (Engine *)sharedInstants;
 
