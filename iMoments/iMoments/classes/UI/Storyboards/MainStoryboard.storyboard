@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TKF-oO-Azd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TKF-oO-Azd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Base Tab Bar Controller-->
@@ -43,7 +43,7 @@
         <scene sceneID="1NA-QZ-O5h">
             <objects>
                 <navigationController id="SGE-7V-fdj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="camera.png" id="VgP-6F-YDO"/>
+                    <tabBarItem key="tabBarItem" title="" image="video.png" id="VgP-6F-YDO"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="pRO-6l-mkt">
@@ -64,7 +64,7 @@
             <objects>
                 <tableViewController id="HYn-Ic-i1I" customClass="VideosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="OLi-tW-mNc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCellIdentifier" textLabel="U59-Hu-TIq" detailTextLabel="zfH-eD-mi1" rowHeight="75" style="IBUITableViewCellStyleSubtitle" id="rZP-wY-gId">
@@ -128,7 +128,7 @@
                                 <rect key="frame" x="232" y="15" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="light" image="lightbulb.png">
+                                <state key="normal" image="bulb_on.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -343,7 +343,7 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="Pw1-3U-Auv" customClass="MomentsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Apf-9S-WU1">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -372,11 +372,11 @@
             </objects>
             <point key="canvasLocation" x="1092" y="802"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller-->
         <scene sceneID="XiD-dU-aYH">
             <objects>
                 <navigationController id="nmw-hh-NMp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BJr-lc-LYM"/>
+                    <tabBarItem key="tabBarItem" title="" image="concole.png" id="BJr-lc-LYM"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="iPk-4S-iXV">
@@ -394,17 +394,68 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.png" width="26" height="26"/>
-        <image name="lightbulb.png" width="26" height="26"/>
+        <image name="bulb_on.png" width="32" height="32"/>
+        <image name="concole.png" width="32" height="32"/>
+        <image name="video.png" width="32" height="32"/>
     </resources>
+    <classes>
+        <class className="BaseTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTabBarController.h"/>
+        </class>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="EditVideoInfoViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditVideoInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addVideoToDB:"/>
+                <relationship kind="outlet" name="titleTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MediaPlayerViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MediaPlayerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="saveBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="MomentsTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MomentsTableViewController.h"/>
+        </class>
+        <class className="ShotVideoViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShotVideoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="changeCamera:"/>
+                <relationship kind="action" name="startPauseRecord:"/>
+                <relationship kind="action" name="turnOnOffTorch:"/>
+                <relationship kind="outlet" name="changeDeviceInputButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="openVideoLibrary" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startPauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="turnLightButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="videoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="VideoLibraryTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoLibraryTableViewController.h"/>
+        </class>
+        <class className="VideosTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideosTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fpc-K7-bJX"/>
-        <segue reference="9iz-zl-Paf"/>
-        <segue reference="muO-VC-7Yd"/>
+        <segue reference="poo-Hn-5cC"/>
+        <segue reference="HL5-FL-5Ev"/>
+        <segue reference="pln-Sd-bw3"/>
     </inferredMetricsTieBreakers>
 </document>

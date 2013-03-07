@@ -168,22 +168,25 @@
 - (void)videoRecordingManager:(VideoRecordingManager *)captureManager torchDidSetMode:(AVCaptureTorchMode) torchMode {
    NSLog(@"%@",NSStringFromSelector(_cmd));
   currentTorchMode = torchMode;
+  NSString *newImageName = nil;
   switch (torchMode) {
     case AVCaptureTorchModeOff: {
-      [_turnLightButton setTitle:@"OFF" forState:UIControlStateNormal];
+      newImageName = @"bulb_off";
       break;
     }
       
     case AVCaptureTorchModeOn: {
-      [_turnLightButton setTitle:@"ON" forState:UIControlStateNormal];
+      newImageName = @"bulb_on";
       break;
     }
       
     case AVCaptureTorchModeAuto: {
-      [_turnLightButton setTitle:@"Auto" forState:UIControlStateNormal];
+      newImageName = @"bulb_on";
       break;
     }
   }
+  
+  [_turnLightButton setImage:[UIImage imageNamed:newImageName] forState:UIControlStateNormal];
 }
 
 - (void)videoRecordingManager:(VideoRecordingManager *)captureManager deviceDidChangePosition:(AVCaptureDevicePosition) devicePosition {
