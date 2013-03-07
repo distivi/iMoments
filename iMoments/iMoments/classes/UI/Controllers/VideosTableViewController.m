@@ -9,6 +9,7 @@
 #import "VideosTableViewController.h"
 #import "MomentsTableViewController.h"
 #import "CustomImageView.h"
+#import "SimpleButton.h"
 #import "Video.h"
 
 
@@ -35,7 +36,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"Detail Video Screen"]) {
-    NSInteger selectedVideoIndex = [self.tableView indexPathForSelectedRow].row;
+    NSInteger selectedVideoIndex = [self.tableView indexPathForSelectedRow].row;    
     [(MomentsTableViewController *)segue.destinationViewController setVideo:_videos[selectedVideoIndex]];
   }
 }
@@ -83,17 +84,18 @@
   bgImage.image = [UIImage imageNamed:@"brushed_alu_dark"];
   [header addSubview:bgImage];
   
-  UIButton *addVideoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  SimpleButton *addVideoButton = [SimpleButton buttonWithType:UIButtonTypeCustom];
   UIImage *buttonImage = [UIImage imageNamed:@"blackButton"];
 
   addVideoButton.frame = CGRectMake(30, 10, 260, 50);
   addVideoButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  CGSize imageSize = buttonImage.size;
-  [addVideoButton setBackgroundImage:[buttonImage resizableImageWithCapInsets:UIEdgeInsetsMake(imageSize.height/2,
-                                                                                               imageSize.width/2,
-                                                                                               imageSize.height/2,
-                                                                                               imageSize.width/2)]   
-                  forState:UIControlStateNormal];
+  [addVideoButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+//  CGSize imageSize = buttonImage.size;
+//  [addVideoButton setBackgroundImage:[buttonImage resizableImageWithCapInsets:UIEdgeInsetsMake(imageSize.height/2,
+//                                                                                               imageSize.width/2,
+//                                                                                               imageSize.height/2,
+//                                                                                               imageSize.width/2)]   
+//                  forState:UIControlStateNormal];
 
   [addVideoButton setTitle:@"ADD VIDEO" forState:UIControlStateNormal];
   [addVideoButton addTarget:self action:@selector(addNewVideo) forControlEvents:UIControlEventTouchDown];

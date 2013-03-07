@@ -38,4 +38,10 @@
   }
 }
 
+- (IBAction)selectMoment:(id)sender {
+  if (_delegate && [_delegate respondsToSelector:@selector(videoInfoHeaderSelectMoment:)]) {
+    [_delegate videoInfoHeaderSelectMoment:self];
+  }
+}
+
 @end

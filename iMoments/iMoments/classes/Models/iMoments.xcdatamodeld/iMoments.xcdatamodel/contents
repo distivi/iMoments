@@ -17,6 +17,6 @@
     <elements>
         <element name="BaseVideoInterface" positionX="-63" positionY="-243" width="128" height="105"/>
         <element name="Moment" positionX="63" positionY="-33" width="128" height="73"/>
-        <element name="Video" positionX="-243" positionY="8" width="128" height="73"/>
+        <element name="Video" positionX="-324" positionY="17" width="128" height="73"/>
     </elements>
 </model>

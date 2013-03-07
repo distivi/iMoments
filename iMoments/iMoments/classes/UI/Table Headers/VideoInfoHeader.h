@@ -14,6 +14,7 @@
 
 - (void)videoInfoHeaderEditInfo:(VideoInfoHeader *) videoInfoHeader;
 - (void)videoInfoHeaderWatchVideo:(VideoInfoHeader *) videoInfoHeader;
+- (void)videoInfoHeaderSelectMoment:(VideoInfoHeader *) videoInfoHeader;
 
 
 @end
@@ -26,6 +27,7 @@
 
 - (IBAction)editVideoInfo:(id)sender;
 - (IBAction)watchVideo:(id)sender;
+- (IBAction)selectMoment:(id)sender;
 
 + (CGFloat)height;
 

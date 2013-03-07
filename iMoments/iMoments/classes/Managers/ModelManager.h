@@ -16,11 +16,20 @@
 
 //------------ Select --------------
 - (NSArray *)allVideos;
+- (NSArray *)allMomentsForVideo:(Video *) video;
 
 
 //------------ Insert --------------
 - (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title;
 - (void)addVideo:(Video *) video;
+
+- (void)addMomentFromVideo:(Video *) video
+                 withTitle:(NSString *) momentsTitle
+                 startTime:(NSNumber *) startTime
+                  duration:(NSNumber *) duration;
+
+- (void)addMomentFromVideo:(Video *) video
+                withMoment:(Moment *) moment;
 
 
 //------------ Delete --------------

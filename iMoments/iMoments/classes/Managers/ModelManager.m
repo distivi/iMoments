@@ -57,11 +57,28 @@
   return existingVideo;
 }
 
+
+- (NSArray *)allMomentsForVideo:(Video *) video {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Moment class])];
+  NSPredicate *prediate = [NSPredicate predicateWithFormat:@"video.videoURL == %@",video.videoURL];
+  [fetchRequest setPredicate:prediate];
+  
+  NSError *error = nil;
+  NSArray *moments = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+  
+  if (error) {
+    NSLog(@"%@ Error executing all videos: %@", [self class], [error localizedDescription]);
+    return nil;
+  }
+  
+  return moments;
+}
+
 #pragma mark - Instert
 
 - (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title {
   
-  Video *newVideo = [NSEntityDescription insertNewObjectForEntityForName:@"Video"//NSStringFromClass([Video class])
+  Video *newVideo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Video class])
                                                   inManagedObjectContext:[self managedObjectContext]];
   newVideo.videoURL = videoUrlString;
   newVideo.title = title;
@@ -74,6 +91,26 @@
   if (video) {
     [self addVideoWithVideoUrlString:video.videoURL title:video.title];
   }
+}
+
+- (void)addMomentFromVideo:(Video *) video
+                 withTitle:(NSString *) momentsTitle
+                 startTime:(NSNumber *) startTime
+                  duration:(NSNumber *) duration {
+  Moment *newMoment = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Moment class])
+                                                    inManagedObjectContext:[self managedObjectContext]];
+  newMoment.video = video;
+  newMoment.title = momentsTitle;
+  newMoment.startTime = startTime;
+  newMoment.duration = duration;
+  
+  [self saveContext];
+  
+}
+
+- (void)addMomentFromVideo:(Video *) video
+                withMoment:(Moment *) moment {
+  [self addMomentFromVideo:video withTitle:moment.title startTime:moment.startTime duration:moment.duration];
 }
 
 #pragma mark - Delete

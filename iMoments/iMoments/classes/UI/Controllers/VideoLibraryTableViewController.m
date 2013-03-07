@@ -20,9 +20,6 @@
 }
 
 - (void)updateAssetsLibrary;
-- (void)videoPlayBackDidFinish:(NSNotification *) notification;
-- (void)showVideoWithUrl:(NSURL *) videoUrl;
-
 
 @end
 
@@ -37,6 +34,7 @@
   } else if ([segue.destinationViewController respondsToSelector:@selector(setVideoURL:)]) {
     AssetBrowserItem *tmpItem = (AssetBrowserItem *)assetItems[[self.tableView indexPathForSelectedRow].row];
     [(MediaPlayerViewController *)segue.destinationViewController setDelegate:self];
+    [(MediaPlayerViewController *)segue.destinationViewController setMediaPlayerType:mediaPlayerTypeConfirmVideo];
     [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:tmpItem.URL];
   }
 }
@@ -58,6 +56,7 @@
   [super updateUI];
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
   [self updateAssetsLibrary];
+
 }
 
 - (void)deleteUI {
@@ -135,29 +134,7 @@
   }];
 }
 
-- (void)videoPlayBackDidFinish:(NSNotification *) notification {
-  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
-}
 
-
-- (void)showVideoWithUrl:(NSURL *) videoUrl {
-  NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
-  
-//  moviePlayerViewController = nil;
-//  moviePlayerViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
-//  [[moviePlayerViewController moviePlayer] prepareToPlay];
-//  [[moviePlayerViewController moviePlayer] setShouldAutoplay:NO];
-//  [[moviePlayerViewController moviePlayer] setControlStyle:MPMovieControlStyleFullscreen];  
-//  [[moviePlayerViewController moviePlayer] setInitialPlaybackTime:(NSTimeInterval)5];
-//  [[moviePlayerViewController moviePlayer] setEndPlaybackTime:(NSTimeInterval)10];
-//  [[moviePlayerViewController moviePlayer] setRepeatMode:MPMovieRepeatModeNone];
-//  
-//  [[NSNotificationCenter defaultCenter] addObserver:self
-//                                           selector:@selector(videoPlayBackDidFinish:)
-//                                               name:MPMoviePlayerPlaybackDidFinishNotification
-//                                             object:moviePlayerViewController];
-//  [self presentMoviePlayerViewControllerAnimated:moviePlayerViewController];
-}
 
 
 @end

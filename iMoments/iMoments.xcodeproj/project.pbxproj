@@ -107,6 +107,9 @@
 		FE44387916E65E330079C77C /* lightbulb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE44387516E65E330079C77C /* lightbulb@2x.png */; };
 		FE44388116E67D780079C77C /* MediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44388016E67D780079C77C /* MediaPlayerViewController.m */; };
 		FE44388616E68EC00079C77C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44388516E68EC00079C77C /* NSData+Encryption.m */; };
+		FE4B3B5716E8DBA40033B12B /* SimpleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3B5616E8DBA40033B12B /* SimpleButton.m */; };
+		FE4B3B5B16E8EC3B0033B12B /* TimeUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3B5A16E8EC3B0033B12B /* TimeUtilites.m */; };
+		FE4B3B6216E8FF9F0033B12B /* EditMomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3B6116E8FF9F0033B12B /* EditMomentViewController.m */; };
 		FE5A4FED16DC00E000A6DC05 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */; };
 		FE5A500B16DC0FF400A6DC05 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5A500A16DC0FF400A6DC05 /* Engine.m */; };
 		FE90510716E1213900617F15 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FE90510616E1213900617F15 /* AVCamUtilities.m */; };
@@ -253,6 +256,12 @@
 		FE44388016E67D780079C77C /* MediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerViewController.m; sourceTree = "<group>"; };
 		FE44388416E68EC00079C77C /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		FE44388516E68EC00079C77C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		FE4B3B5516E8DBA40033B12B /* SimpleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleButton.h; sourceTree = "<group>"; };
+		FE4B3B5616E8DBA40033B12B /* SimpleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleButton.m; sourceTree = "<group>"; };
+		FE4B3B5916E8EC3B0033B12B /* TimeUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeUtilites.h; sourceTree = "<group>"; };
+		FE4B3B5A16E8EC3B0033B12B /* TimeUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUtilites.m; sourceTree = "<group>"; };
+		FE4B3B6016E8FF9F0033B12B /* EditMomentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMomentViewController.h; sourceTree = "<group>"; };
+		FE4B3B6116E8FF9F0033B12B /* EditMomentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMomentViewController.m; sourceTree = "<group>"; };
 		FE5A4FEC16DC00E000A6DC05 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FE5A500916DC0FF400A6DC05 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		FE5A500A16DC0FF400A6DC05 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
@@ -409,6 +418,8 @@
 			children = (
 				30594EB416E027C200C8B873 /* CustomImageView.h */,
 				30594EB516E027C200C8B873 /* CustomImageView.m */,
+				FE4B3B5516E8DBA40033B12B /* SimpleButton.h */,
+				FE4B3B5616E8DBA40033B12B /* SimpleButton.m */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -663,6 +674,8 @@
 			children = (
 				FEBAF60916E7D44D002506BA /* MomentsTableViewController.h */,
 				FEBAF60A16E7D44D002506BA /* MomentsTableViewController.m */,
+				FE4B3B6016E8FF9F0033B12B /* EditMomentViewController.h */,
+				FE4B3B6116E8FF9F0033B12B /* EditMomentViewController.m */,
 			);
 			path = "Moments Controllers";
 			sourceTree = "<group>";
@@ -684,6 +697,8 @@
 				FE90510616E1213900617F15 /* AVCamUtilities.m */,
 				FEC220CA16E0F27B00A1A6AC /* OrientationsTool.h */,
 				FEC220CB16E0F27B00A1A6AC /* OrientationsTool.m */,
+				FE4B3B5916E8EC3B0033B12B /* TimeUtilites.h */,
+				FE4B3B5A16E8EC3B0033B12B /* TimeUtilites.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -894,6 +909,9 @@
 				FEBAF60B16E7D44D002506BA /* MomentsTableViewController.m in Sources */,
 				FEBAF60F16E7D512002506BA /* VideoInfoHeader.m in Sources */,
 				FEBAF61A16E7E0F9002506BA /* FileManager.m in Sources */,
+				FE4B3B5716E8DBA40033B12B /* SimpleButton.m in Sources */,
+				FE4B3B5B16E8EC3B0033B12B /* TimeUtilites.m in Sources */,
+				FE4B3B6216E8FF9F0033B12B /* EditMomentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

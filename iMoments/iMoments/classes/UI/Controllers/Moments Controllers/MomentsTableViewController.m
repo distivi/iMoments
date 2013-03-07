@@ -9,8 +9,14 @@
 #import "MomentsTableViewController.h"
 #import "VideoInfoHeader.h"
 #import "MediaPlayerViewController.h"
+#import "EditMomentViewController.h"
 
-@interface MomentsTableViewController ()<VideoInfoHeaderDelegate>
+#define kStartTime @"kStartTime"
+#define kDuration @"kDuration"
+
+@interface MomentsTableViewController ()<VideoInfoHeaderDelegate,MediaPlayerViewControllerDelegate> {
+  NSMutableArray *moments;
+}
 
 @end
 
@@ -18,6 +24,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  
+  moments = nil;
+  moments = [NSMutableArray arrayWithArray:[[[Engine sharedInstants] modelManager] allMomentsForVideo:_video]];
+  [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -25,9 +35,35 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue.identifier isEqualToString:@"show video"]) {
+  if ([segue.identifier isEqualToString:@"show video"] ||
+      [segue.identifier isEqualToString:@"select moment"] ||
+      [segue.identifier isEqualToString:@"Play moment"]) {
+    
+    BOOL isGoToMediaPlayerToSelectMoment = [segue.identifier isEqualToString:@"select moment"];
+    BOOL isOnlyPlayMoment = [segue.identifier isEqualToString:@"Play moment"];
+    
     NSURL *videoUrl = [NSURL URLWithString:_video.videoURL];
-    [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:videoUrl];
+    MediaPlayerViewController *nextVC = segue.destinationViewController;
+    
+    NSInteger mediaType = 0;
+    if (isGoToMediaPlayerToSelectMoment) {
+      mediaType = mediaPlayerTypeSelectMoment;
+    } else if (isOnlyPlayMoment) {
+      mediaType = mediaPlayerTypePlayMoment;
+      nextVC.moment = moments[[self.tableView indexPathForSelectedRow].row];
+    } else {
+      mediaType = mediaPlayerTypeSimpleWathicng;
+    }
+    
+    [nextVC setMediaPlayerType:mediaType];    
+    [nextVC setDelegate:self];
+    [nextVC setVideoURL:videoUrl];
+    
+  } else if ([segue.identifier isEqualToString:@"Add moment"]) {
+    EditMomentViewController *nextVC = segue.destinationViewController;
+    nextVC.video = _video;
+    nextVC.startTime = (NSNumber *)[(NSDictionary *)sender objectForKey:kStartTime];
+    nextVC.duration = (NSNumber *)[(NSDictionary *)sender objectForKey:kDuration];
   }
 }
 
@@ -35,7 +71,7 @@
 #pragma mark - BaseUIProtocol
 
 - (void)setCustomSetings {
-  
+  [super setCustomSetings];  
 }
 
 - (void)createUI {
@@ -49,7 +85,16 @@
 
 - (void)deleteUI {
   [super deleteUI];
-  
+}
+
+#pragma mark - MediaPlayerViewControllerDelegate
+
+- (void)mediaPlayerViewController:(MediaPlayerViewController *) mediaPlayer
+     didSelectMomentWithStartTime:(NSTimeInterval) startTime
+                          endTime:(NSTimeInterval) endTime {
+  NSDictionary *timeDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:startTime],kStartTime,
+                                  [NSNumber numberWithDouble:(endTime - startTime)],kDuration, nil];
+  [self performSegueWithIdentifier:@"Add moment" sender:timeDictionary];
 }
 
 #pragma mark -  VideoInfoHeaderDelegate
@@ -62,6 +107,10 @@
   [self performSegueWithIdentifier:@"show video" sender:nil];  
 }
 
+- (void)videoInfoHeaderSelectMoment:(VideoInfoHeader *) videoInfoHeader {
+  [self performSegueWithIdentifier:@"select moment" sender:nil];
+}
+
 #pragma mark - UITableView Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -72,14 +121,13 @@
   VideoInfoHeader *header = [[VideoInfoHeader alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), [VideoInfoHeader height])];
   header.delegate = self;
   header.videoTitlelabel.text = _video.title;
-  NSLog(@"video URL: %@",_video.videoURL);
   return header;
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 20;
+  return moments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,8 +140,10 @@
                                   reuseIdentifier:cellIdentifier];
   }
   
+  Moment *currentMoment = moments[indexPath.row];
   
-  cell.textLabel.text = @"moments";
+  cell.textLabel.text = currentMoment.title;
+  cell.detailTextLabel.text = currentMoment.video.videoURL;
   
   return cell;
 }

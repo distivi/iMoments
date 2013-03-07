@@ -45,6 +45,7 @@
     }    
   } else if ([segue.identifier isEqualToString:@"show video"]) {
     [(MediaPlayerViewController *)segue.destinationViewController setDelegate:self];
+    [(MediaPlayerViewController *)segue.destinationViewController setMediaPlayerType:mediaPlayerTypeConfirmVideo];
     [(MediaPlayerViewController *)segue.destinationViewController setVideoURL:(NSURL *)sender];
   }
 }
