@@ -19,6 +19,7 @@
 
 - (void)setTimesToNull;
 - (void)createPlayerWithMoment:(Moment *) moment;
+- (void)playAfterWathingMoment;
 - (BOOL)isHaveErrorWithSelectedTimesIsShowError:(BOOL) isShowError;
 
 - (void)moviePlayBackDidFinish:(NSNotification*)notification;
@@ -241,7 +242,16 @@
     [self.view addSubview:_moviePlayer.view];
     [_moviePlayer setFullscreen:YES animated:YES];
   }
+}
 
+- (void)playAfterWathingMoment {
+  [_moviePlayer stop];
+  _moviePlayer.initialPlaybackTime = [_moment.startTime doubleValue] + [_moment.duration doubleValue];
+  [_moviePlayer setCurrentPlaybackTime:_moviePlayer.initialPlaybackTime];
+  _moment = nil;
+  _moviePlayer.endPlaybackTime = -1;  
+  [_moviePlayer prepareToPlay];
+  
 }
 
 - (BOOL)isHaveErrorWithSelectedTimesIsShowError:(BOOL) isShowError {
@@ -264,21 +274,22 @@
   return NO;
 }
 
-- (void) moviePlayBackDidFinish:(NSNotification*)notification {
-  NSLog(@"\n\n\n%@\n\n\n",NSStringFromSelector(_cmd));
-
-  [[NSNotificationCenter defaultCenter]
-   removeObserver:self
-   name:MPMoviePlayerPlaybackDidFinishNotification
-   object:_moviePlayer];
-  
-  if ([_moviePlayer
-       respondsToSelector:@selector(setFullscreen:animated:)])
-  {
-    [_moviePlayer.view removeFromSuperview];
+- (void)moviePlayBackDidFinish:(NSNotification*)notification {
+  if (_moment) {
+    [self playAfterWathingMoment];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:@"Moment finished"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      [alert dismissWithClickedButtonIndex:0 animated:YES];
+    });
+    
   }
-  
-  [self createPlayerWithMoment:nil];
 }
 
 - (void)moviePlayBackDidChange:(NSNotification*)notification {
