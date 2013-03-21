@@ -12,6 +12,7 @@
 @interface ShotVideoViewController : BaseViewController<VideoRecordingManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *recordingTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startPauseButton;
 @property (weak, nonatomic) IBOutlet UIButton *changeDeviceInputButton;
 @property (weak, nonatomic) IBOutlet UIButton *turnLightButton;

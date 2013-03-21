@@ -10,11 +10,16 @@
 #import "OrientationsTool.h"
 #import "MediaPlayerViewController.h"
 #import "EditVideoInfoViewController.h"
+#import "TimeUtilites.h"
 
 @interface ShotVideoViewController ()<MediaPlayerViewControllerDelegate> {
   AVCaptureTorchMode currentTorchMode;
   AVCaptureDevicePosition currentDevicePosition;
+  NSTimer *recordingTimer;
+  NSInteger recordingTimeInMS;
 }
+
+- (void)setRecordingTime;
 
 @end
 
@@ -53,7 +58,7 @@
 #pragma mark - BaseUIProtocol
 
 - (void)setCustomSetings {
-
+  
 }
 
 - (void)createUI {
@@ -78,6 +83,13 @@
 
 - (void)deleteUI {
   NSLog(@"call %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass(self.class));
+}
+
+#pragma mark - Private methods
+
+- (void)setRecordingTime {
+  recordingTimeInMS+=100.000;
+  _recordingTimeLabel.text = [TimeUtilites timeStringWithShortStyleFromTime:recordingTimeInMS];
 }
 
 #pragma mark - IBActions 
@@ -133,8 +145,14 @@
 
 - (IBAction)startPauseRecord:(id)sender {
   if (![[[[Engine sharedInstants] videoRecordingManager] recorder] isRecording]) {
+    recordingTimeInMS = 0;
+    recordingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(setRecordingTime) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:recordingTimer forMode:NSDefaultRunLoopMode];
+    
     [[[Engine sharedInstants] videoRecordingManager] startRecordingVideo];
   } else {
+    [recordingTimer invalidate];
+    recordingTimer = nil;
     [[[Engine sharedInstants] videoRecordingManager] finishRecordingVideo];
   }
 }
@@ -238,4 +256,8 @@
 
 
 
+- (void)viewDidUnload {
+  [self setRecordingTimeLabel:nil];
+  [super viewDidUnload];
+}
 @end
