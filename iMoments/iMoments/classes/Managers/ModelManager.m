@@ -76,12 +76,13 @@
 
 #pragma mark - Instert
 
-- (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title {
+- (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title duration:(CGFloat) durationInSeconds {
   
   Video *newVideo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Video class])
                                                   inManagedObjectContext:[self managedObjectContext]];
   newVideo.videoURL = videoUrlString;
   newVideo.title = title;
+  newVideo.duration = @(durationInSeconds);
   
   [self saveContext];  
 }
@@ -89,7 +90,7 @@
 
 - (void)addVideo:(Video *) video {
   if (video) {
-    [self addVideoWithVideoUrlString:video.videoURL title:video.title];
+    [self addVideoWithVideoUrlString:video.videoURL title:video.title duration:[video.duration floatValue]];
   }
 }
 

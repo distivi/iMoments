@@ -11,7 +11,7 @@
 #import "CustomImageView.h"
 #import "SimpleButton.h"
 #import "Video.h"
-
+#import "TimeUtilites.h"
 
 @interface VideosTableViewController ()
 
@@ -90,13 +90,6 @@
   addVideoButton.frame = CGRectMake(30, 10, 260, 50);
   addVideoButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
   [addVideoButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//  CGSize imageSize = buttonImage.size;
-//  [addVideoButton setBackgroundImage:[buttonImage resizableImageWithCapInsets:UIEdgeInsetsMake(imageSize.height/2,
-//                                                                                               imageSize.width/2,
-//                                                                                               imageSize.height/2,
-//                                                                                               imageSize.width/2)]   
-//                  forState:UIControlStateNormal];
-
   [addVideoButton setTitle:@"ADD VIDEO" forState:UIControlStateNormal];
   [addVideoButton addTarget:self action:@selector(addNewVideo) forControlEvents:UIControlEventTouchDown];
   [header addSubview:addVideoButton];
@@ -123,6 +116,8 @@
   Video *currentVideo = _videos[indexPath.row];
   
   cell.textLabel.text = currentVideo.title;
+  
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"Video duration: %@",[TimeUtilites timeStringFromTime:[currentVideo.duration floatValue]]];
   
   return cell;
 }

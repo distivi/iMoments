@@ -13,8 +13,8 @@
 + (NSString *)timeStringFromTime:(NSTimeInterval ) time {
   NSInteger hours, minutes, seconds, milliseconds;
   
-  hours = (int)round(time / 3600);
-  minutes = (int)round((time - (hours * 3600)) / 60);
+  hours = (int)floorf(time / 3600);
+  minutes = (int)floorf((time - (hours * 3600)) / 60);
   seconds = (int)(time - hours*3600 - minutes*60);
   milliseconds = (int)(time * 1000) % 1000;
   

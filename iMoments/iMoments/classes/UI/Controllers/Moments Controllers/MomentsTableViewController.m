@@ -10,6 +10,7 @@
 #import "VideoInfoHeader.h"
 #import "MediaPlayerViewController.h"
 #import "EditMomentViewController.h"
+#import "TimeUtilites.h"
 
 #define kStartTime @"kStartTime"
 #define kDuration @"kDuration"
@@ -143,7 +144,7 @@
   Moment *currentMoment = moments[indexPath.row];
   
   cell.textLabel.text = currentMoment.title;
-  cell.detailTextLabel.text = currentMoment.video.videoURL;
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"Moment duration: %@",[TimeUtilites timeStringFromTime:[currentMoment.duration floatValue]]];
   
   return cell;
 }

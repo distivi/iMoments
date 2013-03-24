@@ -7,6 +7,7 @@
 //
 
 #import "EditVideoInfoViewController.h"
+#import <AVFoundation/AVAsset.h>
 
 @interface EditVideoInfoViewController ()
 
@@ -22,8 +23,15 @@
     NSLog(@"_videoURL :%@",[_videoURL absoluteString]);
     NSLog(@"title :%@",_titleTF.text);
     
+    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:_videoURL];
+    
+    CMTime duration = playerItem.duration;
+    float seconds = CMTimeGetSeconds(duration);
+    NSLog(@"duration: %.2f", seconds);
+    
     [[[Engine sharedInstants] modelManager] addVideoWithVideoUrlString:[_videoURL absoluteString]
-                                                                 title:_titleTF.text];
+                                                                 title:_titleTF.text
+                                                              duration:seconds];
     [self performSegueWithIdentifier:@"Pop to Videos" sender:nil];
   }
 }

@@ -20,7 +20,7 @@
 
 
 //------------ Insert --------------
-- (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title;
+- (void)addVideoWithVideoUrlString:(NSString *) videoUrlString title:(NSString *) title duration:(CGFloat) durationInSeconds;
 - (void)addVideo:(Video *) video;
 
 - (void)addMomentFromVideo:(Video *) video
