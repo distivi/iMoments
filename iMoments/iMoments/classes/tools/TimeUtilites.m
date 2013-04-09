@@ -19,9 +19,9 @@
   milliseconds = (int)(time * 1000) % 1000;
   
   NSString *timeString = [NSString stringWithFormat:@"%c%d:%c%d:%c%d:%c%c%d",
-                          (hours > 10)?0:'0',hours,
-                          (minutes > 10)?0:'0',minutes,
-                          (seconds > 10)?0:'0',seconds,
+                          (hours >= 10)?0:'0',hours,
+                          (minutes >= 10)?0:'0',minutes,
+                          (seconds >= 10)?0:'0',seconds,
                           (milliseconds > 100)?0:'0',(milliseconds > 10)?0:'0',milliseconds];  
   return timeString;
 }
